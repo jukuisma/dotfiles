@@ -68,6 +68,10 @@ map K {
 map H b
 map L w
 
+" Set sensible navigation repeat directions
+noremap , ;
+noremap ; ,
+
 " Splitting arguments
 nnoremap gs :ArgWrap<CR>
 
