@@ -2,12 +2,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'https://github.com/tpope/vim-surround.git'
-Plugin 'https://github.com/tpope/vim-commentary.git'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-Plugin 'https://github.com/FooSoft/vim-argwrap.git'
-Plugin 'preservim/nerdtree'
+
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion.git'
+Plugin 'FooSoft/vim-argwrap.git'
+Plugin 'preservim/nerdtree'
+Plugin 'tpope/vim-commentary.git'
+Plugin 'tpope/vim-surround.git'
 
 call vundle#end()
 
@@ -71,6 +73,9 @@ map L w
 " Set sensible navigation repeat directions
 noremap , ;
 noremap ; ,
+
+" Easymotion prefix
+map <Leader>e <Plug>(easymotion-prefix)
 
 " Splitting arguments
 nnoremap gs :ArgWrap<CR>
