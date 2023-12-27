@@ -6,29 +6,34 @@ source $ZSH/oh-my-zsh.sh
 
 # Env variables
 export EDITOR='vim'
-export VAGRANT_DEFAULT_PROVIDER='libvirt'
 export KEEPASSXC_DB=''
 export KEEPASSXC_KEY=''
+export VAGRANT_DEFAULT_PROVIDER='libvirt'
 export XM3_UUID=''
 export XM5_UUID=''
 
 # Aliases
-alias c="clear"
 alias ccat="highlight --force --out-format=ansi"
+alias c="clear"
 alias clipnt="wl-copy -c"
-alias xclipnt="xclip -selection clipboard -i /dev/null"
+alias clipntx="xclip -selection clipboard -i /dev/null"
 alias connect-xm3="bluetoothctl connect $XM3_UUID"
-alias disconnect-xm3="bluetoothctl disconnect $XM3_UUID"
 alias connect-xm5="bluetoothctl connect $XM5_UUID"
+alias disconnect-xm3="bluetoothctl disconnect $XM3_UUID"
 alias disconnect-xm5="bluetoothctl disconnect $XM5_UUID"
+alias v="vim"
 
 alias ga="git add"
+alias gb="git branch"
 alias gc="git commit"
 alias gco="git checkout"
-alias gf="git diff"
+alias gd="git diff"
+alias gl="git log"
 alias gm="git merge"
 alias gp="git pull"
-alias gr="git rebase"
+alias gpu="git push"
+alias grb="git rebase"
+alias grs="git reset"
 alias gs="git status"
 alias gsh="git show"
 
