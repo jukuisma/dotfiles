@@ -3,3 +3,6 @@ vim:
 
 zsh:
 	cp zshrc ~/.zshrc
+
+git:
+	cp gitconfig ~/.gitconfig

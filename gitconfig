@@ -1,0 +1,31 @@
+[user]
+    email = <EMAIL>
+    name = Juho Kuisma
+    signingkey = <KEY>
+
+[push]
+    default = simple
+
+[pull]
+    ff = only
+    rebase = false
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[gpg]
+    format = ssh
+
+[commit]
+    gpgsign = true
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
+
+[pager]
+    branch = false
