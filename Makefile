@@ -11,4 +11,5 @@ zsh:
 git:
 	cp git/gitconfig ~/.gitconfig
 
+.PHONY: vim nvim zsh git
 all: vim nvim zsh git
