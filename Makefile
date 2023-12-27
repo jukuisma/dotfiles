@@ -6,3 +6,5 @@ zsh:
 
 git:
 	cp gitconfig ~/.gitconfig
+
+all: vim zsh git
