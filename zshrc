@@ -14,6 +14,7 @@ export XM5_UUID=''
 
 # Aliases
 alias c="clear"
+alias ccat="highlight --force --out-format=ansi"
 alias clipnt="wl-copy -c"
 alias xclipnt="xclip -selection clipboard -i /dev/null"
 alias connect-xm3="bluetoothctl connect $XM3_UUID"
@@ -33,4 +34,26 @@ function replace () {
     for file in $(grep -rlI "$search"); do
         vim -c "%s/$search/$replace/gc" -c 'wq' "$file"
     done
+}
+
+function plugins () {
+    git clone \
+        https://github.com/VundleVim/Vundle.vim.git \
+        ~/.vim/bundle/Vundle.vim
+    git clone --depth=1 \
+        https://github.com/ohmyzsh/ohmyzsh.git \
+        ~/.oh-my-zsh
+}
+
+function virt-install-debian () {
+    domain="$1"
+    virt-install \
+        --name $domain \
+        --ram 8192 --vcpus 4 \
+        --disk path=/var/lib/libvirt/images/$domain,size=20 \
+        --os-variant debian12 \
+        --graphics none \
+        --console pty,target_type=serial \
+        --location 'https://ftp.debian.org/debian/dists/bookworm/main/installer-amd64/' \
+        --extra-args 'console=ttyS0,115200n8 serial'
 }
