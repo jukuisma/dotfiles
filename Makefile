@@ -1,10 +1,14 @@
 vim:
-	cp vimrc ~/.vimrc
+	cp vim/vimrc ~/.vimrc
+
+nvim: vim
+	mkdir -p ~/.config/nvim
+	cp vim/init.vim ~/.config/nvim/
 
 zsh:
-	cp zshrc ~/.zshrc
+	cp zsh/zshrc ~/.zshrc
 
 git:
-	cp gitconfig ~/.gitconfig
+	cp git/gitconfig ~/.gitconfig
 
-all: vim zsh git
+all: vim nvim zsh git

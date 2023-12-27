@@ -21,6 +21,7 @@ alias connect-xm3="bluetoothctl connect $XM3_UUID"
 alias connect-xm5="bluetoothctl connect $XM5_UUID"
 alias disconnect-xm3="bluetoothctl disconnect $XM3_UUID"
 alias disconnect-xm5="bluetoothctl disconnect $XM5_UUID"
+alias vim="nvim"
 alias v="vim"
 
 alias ga="git add"
