@@ -1,7 +1,7 @@
 # Oh My Zsh setup
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
-plugins=( git vi-mode )
+plugins=( vi-mode )
 source $ZSH/oh-my-zsh.sh
 
 # Env variables
@@ -21,6 +21,16 @@ alias connect-xm3="bluetoothctl connect $XM3_UUID"
 alias disconnect-xm3="bluetoothctl disconnect $XM3_UUID"
 alias connect-xm5="bluetoothctl connect $XM5_UUID"
 alias disconnect-xm5="bluetoothctl disconnect $XM5_UUID"
+
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gf="git diff"
+alias gm="git merge"
+alias gp="git pull"
+alias gr="git rebase"
+alias gs="git status"
+alias gsh="git show"
 
 function vault () {
     entry="$1"
