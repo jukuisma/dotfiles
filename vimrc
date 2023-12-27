@@ -3,13 +3,14 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion.git'
-Plugin 'FooSoft/vim-argwrap.git'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'FooSoft/vim-argwrap'
+Plugin 'jasonccox/vim-wayland-clipboard'
 Plugin 'preservim/nerdtree'
-Plugin 'tpope/vim-commentary.git'
-Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
