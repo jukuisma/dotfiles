@@ -53,9 +53,11 @@ let mapleader = "\<Space>"
 map <leader>y "+y
 map <leader>p "+p
 
+" Easymotion prefix
+map <Leader> <Plug>(easymotion-prefix)
+
 " File commands
-map <leader>fj :e #<CR>
-map <leader>ff <C-p>
+map <leader>j :e #<CR>
 map <leader><leader> <C-p>
 
 " Run norm command
@@ -71,9 +73,6 @@ map L w
 noremap , ;
 noremap ; ,
 
-" Easymotion prefix
-map <Leader>e <Plug>(easymotion-prefix)
-
 " Splitting arguments
 nnoremap gs :ArgWrap<CR>
 
@@ -82,11 +81,16 @@ nnoremap <C-L> :noh<CR><C-L>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Alt window navigation
-nmap <leader>w <C-w>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
 nmap <silent> <S-Up> :wincmd K<CR>
 nmap <silent> <S-Down> :wincmd J<CR>
 nmap <silent> <S-Left> :wincmd H<CR>
