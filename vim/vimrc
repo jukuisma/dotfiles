@@ -9,6 +9,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -98,6 +100,7 @@ nmap <silent> <S-Right> :wincmd L<CR>
 
 " Theme
 colorscheme catppuccin-mocha
+let g:airline_theme='minimalist'
 
 " ctlrp setup
 let g:ctrlp_map = '<c-p>'
