@@ -59,6 +59,9 @@ map <leader>p "+p
 map <Leader> <Plug>(easymotion-prefix)
 
 " File commands
+map <leader>q :q<CR>
+map <leader>x :x<CR>
+map <leader>v :vsplit<CR>
 map <leader>j :e #<CR>
 map <leader><leader> <C-p>
 
