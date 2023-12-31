@@ -9,7 +9,6 @@ export EDITOR='vim'
 export KEEPASSXC_DB=''
 export KEEPASSXC_KEY=''
 export VAGRANT_DEFAULT_PROVIDER='libvirt'
-export XM3_UUID=''
 export XM5_UUID=''
 
 # Aliases
@@ -17,12 +16,15 @@ alias ccat="highlight --force --out-format=ansi"
 alias c="clear"
 alias clipnt="wl-copy -c"
 alias clipntx="xclip -selection clipboard -i /dev/null"
-alias connect-xm3="bluetoothctl connect $XM3_UUID"
 alias connect-xm5="bluetoothctl connect $XM5_UUID"
-alias disconnect-xm3="bluetoothctl disconnect $XM3_UUID"
 alias disconnect-xm5="bluetoothctl disconnect $XM5_UUID"
+
 alias vim="nvim"
-alias v="vim"
+alias vi="nvim"
+alias v="nvim"
+
+alias j="sudo journalctl -xe"
+alias s="sudo systemctl"
 
 alias ga="git add"
 alias gb="git branch"
