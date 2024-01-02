@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export KEEPASSXC_DB=''
 export KEEPASSXC_KEY=''
+export LIBVIRT_DEFAULT_URI='qemu:///system'
 export VAGRANT_DEFAULT_PROVIDER='libvirt'
 export XM5_UUID=''
 
@@ -68,7 +69,7 @@ function virt-install-debian () {
     virt-install \
         --name $domain \
         --ram 8192 --vcpus 4 \
-        --disk path=/var/lib/libvirt/images/$domain,size=20 \
+        --disk pool=virt,size=20 \
         --os-variant debian12 \
         --graphics none \
         --console pty,target_type=serial \
