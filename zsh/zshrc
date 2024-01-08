@@ -24,7 +24,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
-alias j="sudo journalctl -xe"
+alias j="sudo journalctl"
 alias s="sudo systemctl"
 
 alias ga="git add"
