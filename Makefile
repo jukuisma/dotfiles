@@ -20,5 +20,12 @@ patchppuccin:
 		git am < ${PWD}/vim/0001-Patch-mocha-background.patch || \
 		git am --abort
 
-.PHONY: vim nvim zsh git patchppuccin
+ohmypatch:
+	# Patch oh my zsh to not automatically check for updates during each
+	# initial load.
+	cd ~/.oh-my-zsh && \
+		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch || \
+		git am --abort
+
+.PHONY: vim nvim zsh git patchppuccin ohmypatch
 all: vim nvim zsh git
