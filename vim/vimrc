@@ -51,9 +51,10 @@ set ff=unix
 " Set leader to space
 let mapleader = "\<Space>"
 
-" Map system clipboard yanking and pasting
+" Map yanking, pasting and deleting to system clipboard
 map <leader>y "+y
 map <leader>p "+p
+map <leader>d "+d
 
 " Easymotion prefix
 map <Leader> <Plug>(easymotion-prefix)
