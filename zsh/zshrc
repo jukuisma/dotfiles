@@ -13,7 +13,7 @@ export VAGRANT_DEFAULT_PROVIDER='libvirt'
 export XM5_UUID=''
 
 # Aliases
-alias ccat="highlight --force --out-format=ansi"
+alias ccat="batcat"
 alias c="clear"
 alias clipnt="wl-copy -c"
 alias clipntx="xclip -selection clipboard -i /dev/null"
