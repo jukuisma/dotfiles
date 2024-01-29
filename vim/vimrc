@@ -4,9 +4,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'catppuccin/nvim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'FooSoft/vim-argwrap'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
@@ -64,7 +65,8 @@ map <leader>q :q<CR>
 map <leader>x :x<CR>
 map <leader>v :vsplit<CR>
 map <leader>j :e #<CR>
-map <leader><leader> <C-p>
+map <leader><leader> :Files<CR>
+map <leader>g :Rg<CR>
 
 " Run norm command
 map <C-n> :norm<Space>
@@ -105,8 +107,3 @@ nmap <silent> <S-Right> :wincmd L<CR>
 " Theme
 colorscheme catppuccin-mocha
 let g:airline_theme='minimalist'
-
-" ctlrp setup
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'a'
