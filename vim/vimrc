@@ -45,9 +45,6 @@ set cc=80
 set number relativenumber
 set nu rnu
 set ff=unix
-" set pastetoggle=<F2> " use <leader>p instead
-" set list
-" set listchars=nbsp:?
 
 " Set leader to space
 let mapleader = "\<Space>"
