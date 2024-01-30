@@ -13,6 +13,9 @@ zsh:
 git:
 	cp git/gitconfig ~/.gitconfig
 
+tmux:
+	cp tmux/tmux.conf ~/.tmux.conf
+
 patchppuccin:
 	# Patch mocha background until all confs are migrated to lua and it can
 	# be properly overridden.
@@ -27,5 +30,5 @@ ohmypatch:
 		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch || \
 		git am --abort
 
-.PHONY: vim nvim zsh git patchppuccin ohmypatch
-all: vim nvim zsh git
+.PHONY: vim nvim zsh git tmux patchppuccin ohmypatch
+all: vim nvim zsh git tmux
