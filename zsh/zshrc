@@ -5,7 +5,7 @@ plugins=( vi-mode fzf )
 source $ZSH/oh-my-zsh.sh
 
 # Env variables
-export EDITOR='vim'
+export EDITOR='nvim'
 export KEEPASSXC_DB=''
 export KEEPASSXC_KEY=''
 export LIBVIRT_DEFAULT_URI='qemu:///system'
