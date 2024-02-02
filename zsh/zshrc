@@ -16,9 +16,14 @@ export XM5_UUID=''
 alias ccat="batcat"
 alias c="clear"
 alias clipnt="wl-copy -c"
-alias clipntx="xclip -selection clipboard -i /dev/null"
 alias connect-xm5="bluetoothctl connect $XM5_UUID"
 alias disconnect-xm5="bluetoothctl disconnect $XM5_UUID"
+
+alias t="tmux"
+alias ta="tmux a"
+alias tl="tmux ls"
+alias ts="tmux-sessionizer"
+alias tks="tmux kill-server"
 
 alias vim="nvim"
 alias vi="nvim"

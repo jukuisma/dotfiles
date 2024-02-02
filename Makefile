@@ -15,6 +15,7 @@ git:
 
 tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
+	cp tmux/tmux-sessionizer ~/.local/bin/
 
 patchppuccin:
 	# Patch mocha background until all confs are migrated to lua and it can
