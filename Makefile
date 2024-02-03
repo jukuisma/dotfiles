@@ -15,6 +15,7 @@ git:
 
 tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
+	mkdir -p ~/.local/bin/
 	cp tmux/tmux-sessionizer ~/.local/bin/
 
 patchppuccin:
