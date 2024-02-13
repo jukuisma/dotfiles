@@ -103,4 +103,4 @@ nmap <silent> <S-Right> :wincmd L<CR>
 
 " Theme
 colorscheme catppuccin-mocha
-let g:airline_theme='minimalist'
+let g:airline_theme='lucius'
