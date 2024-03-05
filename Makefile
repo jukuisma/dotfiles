@@ -33,5 +33,11 @@ ohmypatch:
 		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch || \
 		git am --abort
 
-.PHONY: vim neovim zsh git tmux patchppuccin ohmypatch
+airlinepatch:
+	# Patch airline statusline UTF-8 symbols
+	cd ~/.vim/bundle/vim-airline && \
+		git am < ${PWD}/neovim/0002-Patch-UTF-8-symbols.patch || \
+		git am --abort
+
+.PHONY: vim neovim zsh git tmux patchppuccin ohmypatch airlinepatch
 all: vim neovim zsh git tmux
