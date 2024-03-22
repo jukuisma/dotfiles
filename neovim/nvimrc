@@ -66,6 +66,12 @@ map <leader>j :e #<CR>
 map <leader><leader> :Files<CR>
 map <leader>g :Rg<CR>
 
+" xxd
+nmap <leader>e :%!xxd<CR>
+nmap <leader>r :%!xxd -r<CR>
+vmap <leader>e !xxd<CR>
+vmap <leader>r !xxd -r<CR>
+
 " Run norm command
 map <C-n> :norm<Space>
 
