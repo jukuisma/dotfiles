@@ -58,12 +58,24 @@ function vault () {
 }
 
 function replace () {
+    if [ "$#" -ne 2 ]; then
+        echo "Must be 2 parameters: e.g. 'replace replace_this with_this'"
+        return 1
+    fi
+
+    limit=50  # if more than 50 grep results found, do nothing
     search="$1"
     replace="$2"
+    length=$(grep -rlI --color=never "$search" | wc -l)
 
-    for file in $(grep -rlI "$search"); do
-        vim -c "%s/$search/$replace/gc" -c 'wq' "$file"
-    done
+    if [ "$length" -ne 0 ] && [ "$length" -lt $limit ]; then
+        for file in $(grep -rliI --color=never "$search")
+        do
+            nvim -c "%s/$search/$replace/gc" -c 'wq' "$file"
+        done
+    else
+        echo "$length results found, nothing done"
+    fi
 }
 
 function plugins () {
