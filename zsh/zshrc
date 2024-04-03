@@ -57,6 +57,11 @@ function vault () {
     keepassxc-cli clip -k $KEEPASSXC_KEY $KEEPASSXC_DB $entry 0
 }
 
+function rand () {
+    tr -dc A-Za-z0-9 </dev/urandom | head -c $1
+    echo
+}
+
 function replace () {
     if [ "$#" -ne 2 ]; then
         echo "Must be 2 parameters: e.g. 'replace replace_this with_this'"
