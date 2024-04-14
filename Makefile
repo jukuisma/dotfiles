@@ -1,5 +1,9 @@
 PWD = $(shell pwd)
 
+all: vim neovim zsh git tmux
+patch: patchppuccin ohmypatch airlinepatch
+.PHONY: vim neovim zsh git tmux patch patchppuccin ohmypatch airlinepatch
+
 vim:
 	cp vim/vimrc ~/.vimrc
 
@@ -18,8 +22,6 @@ tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
 	mkdir -p ~/.local/bin/
 	cp tmux/tmux-sessionizer ~/.local/bin/
-
-patch: patchppuccin ohmypatch airlinepatch
 
 patchppuccin:
 	# Patch mocha background until all confs are migrated to lua and it can
@@ -40,6 +42,3 @@ airlinepatch:
 	cd ~/.vim/bundle/vim-airline && \
 		git am < ${PWD}/neovim/0002-Patch-UTF-8-symbols.patch || \
 		git am --abort
-
-.PHONY: vim neovim zsh git tmux patch patchppuccin ohmypatch airlinepatch
-all: vim neovim zsh git tmux
