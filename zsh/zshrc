@@ -75,7 +75,7 @@ function replace () {
     length=$(grep -rlI --color=never "$search" | wc -l)
 
     if [ "$length" -ne 0 ] && [ "$length" -lt $limit ]; then
-        for file in $(grep -rliI --color=never "$search")
+        for file in $(grep -rlI --color=never "$search")
         do
             nvim -c "%s/$search/$replace/gc" -c 'wq' "$file"
         done
