@@ -34,6 +34,7 @@ alias vim!="/usr/bin/vim"
 alias vi!="/usr/bin/vim"
 alias v!="/usr/bin/vim"
 alias vimb="vim -b"
+alias vimd="vim -d"
 
 alias j="sudo journalctl"
 alias s="sudo systemctl"
