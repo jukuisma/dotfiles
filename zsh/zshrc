@@ -111,3 +111,7 @@ function toggle-gitconfig () {
     selected=$(ls ~/.gitconfig_* | fzf)
     cp "$selected" ~/.gitconfig
 }
+
+function trprompt () {
+    export PROMPT=$(echo $PROMPT | sed 's/ $(git_prompt_info)'//)
+}
