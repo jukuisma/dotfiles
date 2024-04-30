@@ -1,29 +1,31 @@
-From f9982f84bafcbd75e402f8aaddbd3b305a2f08a3 Mon Sep 17 00:00:00 2001
+From 08fa9f6398f1da2471e360be33ec61765472a48f Mon Sep 17 00:00:00 2001
 From: Juho Kuisma <kuisma.juho+github@gmail.com>
-Date: Tue, 5 Mar 2024 10:48:47 +0200
+Date: Tue, 30 Apr 2024 22:11:16 +0300
 Subject: [PATCH] Patch UTF-8 symbols
 
 ---
- autoload/airline/init.vim | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ autoload/airline/init.vim | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/autoload/airline/init.vim b/autoload/airline/init.vim
-index 9cfd7b0..108c0d8 100644
+index 9cfd7b0..cf96f46 100644
 --- a/autoload/airline/init.vim
 +++ b/autoload/airline/init.vim
-@@ -148,9 +148,9 @@ function! airline#init#bootstrap()
+@@ -148,10 +148,10 @@ function! airline#init#bootstrap()
      call extend(g:airline_symbols, {
            \ 'readonly': "\u229D",
            \ 'whitespace': "\u2632",
 -          \ 'maxlinenr': "\u2630",
 -          \ 'linenr': " \u33d1:",
 -          \ 'colnr': " \u2105:",
+-          \ 'branch': "\u16A0",
 +          \ 'maxlinenr': "",
 +          \ 'linenr': " ln:",
 +          \ 'colnr': " c:",
-           \ 'branch': "\u16A0",
++          \ 'branch': "",
            \ 'notexists': "\u0246",
            \ 'crypt': nr2char(0x1F512),
+           \ 'dirty': '!',
 -- 
-2.34.1
+2.44.0
 
