@@ -69,7 +69,7 @@ map <leader>gr :Rg<CR>
 
 " Git commands
 map <leader>gb :Git blame<CR>
-map <leader>gd :Git diff<CR>
+map <leader>gd :Gvdiffsplit<CR>
 map <leader>gl :Git log<CR>
 map <leader>gs :Git status<CR>
 
