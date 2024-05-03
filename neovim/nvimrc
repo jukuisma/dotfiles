@@ -39,7 +39,7 @@ set t_vb=
 set mouse=a
 set cmdheight=1
 set number
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=10
 set shiftwidth=4
 set softtabstop=4
 set expandtab
