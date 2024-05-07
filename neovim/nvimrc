@@ -4,7 +4,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'catppuccin/nvim'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -56,16 +55,15 @@ map <leader>y "+y
 map <leader>p "+p
 map <leader>d "+d
 
-" Easymotion prefix
-map <Leader> <Plug>(easymotion-prefix)
-
 " File commands
 map <leader>q :q<CR>
 map <leader>x :x<CR>
 map <leader>v :vsplit<CR>
 map <leader>j :e #<CR>
 map <leader><leader> :Files<CR>
-map <leader>gr :Rg<CR>
+map <leader>ff :Files<CR>
+map <leader>fb :Buffers<CR>
+map <leader>fg :Rg<CR>
 
 " Git commands
 map <leader>gb :Git blame<CR>
