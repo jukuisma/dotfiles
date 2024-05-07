@@ -57,6 +57,7 @@ map <leader>d "+d
 
 " File commands
 map <leader>q :q<CR>
+map <leader>w :wincmd w<CR>
 map <leader>x :x<CR>
 map <leader>j :e #<CR>
 map <leader><leader> :Files<CR>
