@@ -80,6 +80,10 @@ vmap <leader>r !xxd -r<CR>
 " Run norm command
 map <C-n> :norm<Space>
 
+" Repeat last macro && ex command
+map <leader>. @@
+map <leader>, @:
+
 " Faster navigation
 map J }
 map K {
