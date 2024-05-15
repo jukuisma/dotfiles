@@ -27,6 +27,7 @@ alias ta="tmux a"
 alias tl="tmux ls"
 alias ts="tmux-sessionizer"
 alias tks="tmux kill-server"
+bindkey -s '^F' 'ts^M'
 
 alias vim="nvim"
 alias vi="nvim"
