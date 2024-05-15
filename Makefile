@@ -30,8 +30,7 @@ patchppuccin:
 
 ohmypatch:
 	cd ~/.oh-my-zsh && \
-		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch && \
-		git am < ${PWD}/zsh/0002-Fix-fzf-plugin-on-Fedora.patch || \
+		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch || \
 		git am --abort
 
 airlinepatch:
