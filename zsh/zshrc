@@ -114,5 +114,10 @@ function toggle-gitconfig () {
 }
 
 function trprompt () {
-    export PROMPT=$(echo $PROMPT | sed 's/ $(git_prompt_info)'//)
+    export PROMPT=$(echo $PROMPT | sed 's/ $(git_prompt_info)//')
+}
+
+function activate () {
+    source venv/bin/activate
+    export PROMPT=$(echo $PROMPT | sed 's/(venv) ╭─/╭─(venv) /')
 }
