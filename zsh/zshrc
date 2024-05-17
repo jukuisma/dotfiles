@@ -1,7 +1,7 @@
 # Oh My Zsh setup
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
-plugins=( vi-mode fzf )
+plugins=( vi-mode fzf zsh-autosuggestions )
 source $ZSH/oh-my-zsh.sh
 
 # Env variables
@@ -13,6 +13,10 @@ export KEEPASSXC_KEY=''
 export LIBVIRT_DEFAULT_URI='qemu:///system'
 export VAGRANT_DEFAULT_PROVIDER='libvirt'
 export XM5_UUID=''
+
+# Zsh key bindings
+bindkey -s '^F' 'ts^M'
+bindkey '^Y' autosuggest-accept
 
 # Aliases
 alias ccat="batcat"
@@ -27,7 +31,6 @@ alias ta="tmux a"
 alias tl="tmux ls"
 alias ts="tmux-sessionizer"
 alias tks="tmux kill-server"
-bindkey -s '^F' 'ts^M'
 
 alias vim="nvim"
 alias vi="nvim"
@@ -87,12 +90,15 @@ function replace () {
 }
 
 function plugins () {
-    git clone \
+    git clone --depth=1 \
         https://github.com/VundleVim/Vundle.vim.git \
         ~/.vim/bundle/Vundle.vim
     git clone --depth=1 \
         https://github.com/ohmyzsh/ohmyzsh.git \
         ~/.oh-my-zsh
+    git clone --depth=1 \
+        https://github.com/zsh-users/zsh-autosuggestions \
+        ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 }
 
 function virt-install-debian () {
