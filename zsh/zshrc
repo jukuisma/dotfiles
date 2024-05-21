@@ -1,7 +1,12 @@
 # Oh My Zsh setup
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
-plugins=( vi-mode fzf rust )
+plugins=(
+    vi-mode
+    fzf
+    rust
+    zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
 
 # Env variables
@@ -16,6 +21,7 @@ export XM5_UUID=''
 
 # Zsh key bindings
 bindkey -s '^F' 'ts^M'
+bindkey '^Y' autosuggest-accept
 
 # Aliases
 alias ccat="batcat"
