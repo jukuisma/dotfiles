@@ -22,6 +22,7 @@ export XM5_UUID=''
 # Zsh key bindings
 bindkey -s '^F' 'ts^M'
 bindkey '^Y' autosuggest-accept
+bindkey '^@' autosuggest-accept
 
 # Aliases
 alias ccat="batcat"
