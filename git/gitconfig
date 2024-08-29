@@ -18,9 +18,6 @@
     ui = true
     pager = true
 
-[gpg]
-    format = ssh
-
 [commit]
     gpgsign = true
 
