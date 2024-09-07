@@ -163,3 +163,10 @@ function activate () {
     source venv/bin/activate
     export PROMPT=$(echo $PROMPT | sed 's/(venv) ╭─/╭─(venv) /')
 }
+
+function syscalls () {
+    grep -E '^[0-9]' ~/kernel/linux-*/arch/x86/entry/syscalls/syscall_64.tbl |\
+        fzf |\
+        cut -d $'\t' -f 1 |\
+        wl-copy -n
+}
