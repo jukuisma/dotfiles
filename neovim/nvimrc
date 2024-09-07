@@ -65,6 +65,12 @@ map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
 map <leader>fg :Rg<CR>
 
+" Decimal to binary, hex and octal conversions
+" Match all numbers in the current line and prompt for confirmation
+map <leader>cb :s/\d\+/\=printf("0b%b", submatch(0))/gc<CR>
+map <leader>ch :s/\d\+/\=printf("0x%x", submatch(0))/gc<CR>
+map <leader>co :s/\d\+/\=printf("0o%o", submatch(0))/gc<CR>
+
 " Git commands
 map <leader>gb :Git blame<CR>
 map <leader>gd :Gvdiffsplit<CR>

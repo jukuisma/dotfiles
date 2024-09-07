@@ -43,6 +43,12 @@ map <leader>w :wincmd w<CR>
 map <leader>x :x<CR>
 map <leader>j :e #<CR>
 
+" Decimal to binary, hex and octal conversions
+" Match all numbers in the current line and prompt for confirmation
+map <leader>cb :s/\d\+/\=printf("0b%b", submatch(0))/gc<CR>
+map <leader>ch :s/\d\+/\=printf("0x%x", submatch(0))/gc<CR>
+map <leader>co :s/\d\+/\=printf("0o%o", submatch(0))/gc<CR>
+
 " xxd
 nmap <leader>e :%!xxd<CR>
 nmap <leader>r :%!xxd -r<CR>
