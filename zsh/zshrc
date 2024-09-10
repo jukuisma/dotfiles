@@ -170,3 +170,8 @@ function syscalls () {
         cut -d $'\t' -f 1 |\
         wl-copy -n
 }
+
+function sshfs-vagrant () {
+    host="$1"
+    sshfs -o idmap=user $host:/home/vagrant/scratch ~/scratch
+}
