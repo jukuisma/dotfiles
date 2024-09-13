@@ -1,2 +1,3 @@
+e scr.color = 3
 e scr.theme = dark
 e asm.syntax = intel
