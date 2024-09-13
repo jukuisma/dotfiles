@@ -1,8 +1,9 @@
 PWD = $(shell pwd)
 
-all: vim neovim zsh git tmux
+all: vim neovim zsh git tmux radare2
 patch: patchppuccin ohmypatch airlinepatch
-.PHONY: vim neovim zsh git tmux patch patchppuccin ohmypatch airlinepatch
+.PHONY: vim neovim zsh git tmux radare2 \
+	patch patchppuccin ohmypatch airlinepatch
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -22,6 +23,9 @@ tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
 	mkdir -p ~/.local/bin/
 	cp tmux/tmux-sessionizer ~/.local/bin/
+
+radare2:
+	cp radare2/radare2rc ~/.radare2rc
 
 patchppuccin:
 	cd ~/.vim/bundle/nvim/lua/catppuccin && \
