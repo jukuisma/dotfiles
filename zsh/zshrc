@@ -178,5 +178,5 @@ function sshfs-vagrant () {
 
 function r2d2 () {
     file="$1"
-    r2 -nqc 'px $s' $file | less
+    r2 -nqc 'px $s' $file | less --header=1
 }
