@@ -175,3 +175,8 @@ function sshfs-vagrant () {
     host="$1"
     sshfs -o idmap=user $host:/home/vagrant/scratch ~/scratch
 }
+
+function r2d2 () {
+    file="$1"
+    r2 -nqc 'px $s' $file | less
+}
