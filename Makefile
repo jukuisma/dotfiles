@@ -41,3 +41,6 @@ airlinepatch:
 	cd ~/.vim/bundle/vim-airline && \
 		git am < ${PWD}/neovim/0002-Patch-UTF-8-symbols.patch || \
 		git am --abort
+
+fortunes:
+	gpg -d radare2/fortunes.gpg >> ~/github/radare2/doc/fortunes.fun
