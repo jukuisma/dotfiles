@@ -1,4 +1,5 @@
 e scr.color = 3
 e scr.theme = dark
+e scr.prompt.vi = true
 e asm.syntax = intel
 e stack.size = 256
