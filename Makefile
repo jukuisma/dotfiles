@@ -1,8 +1,8 @@
 PWD = $(shell pwd)
 
-all: vim neovim zsh git tmux radare2
+all: vim neovim zsh git tmux radare2 gdb
 patch: patchppuccin ohmypatch airlinepatch
-.PHONY: vim neovim zsh git tmux radare2 \
+.PHONY: vim neovim zsh git tmux radare2 gdb \
 	patch patchppuccin ohmypatch airlinepatch
 
 vim:
@@ -26,6 +26,9 @@ tmux:
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
+
+gdb:
+	cp gdb/gdbinit ~/.gdbinit
 
 patchppuccin:
 	cd ~/.vim/bundle/nvim/lua/catppuccin && \
