@@ -1,9 +1,9 @@
 PWD = $(shell pwd)
 
 all: vim neovim zsh git tmux radare2 gdb
-patch: patchppuccin ohmypatch airlinepatch
+patch: patchppuccin airlinepatch
 .PHONY: vim neovim zsh git tmux radare2 gdb \
-	plugins patch patchppuccin ohmypatch airlinepatch
+	plugins patch patchppuccin airlinepatch
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -45,11 +45,6 @@ plugins:
 patchppuccin:
 	cd ~/.vim/bundle/nvim/lua/catppuccin && \
 		git am < ${PWD}/neovim/0001-Patch-mocha-background.patch || \
-		git am --abort
-
-ohmypatch:
-	cd ~/.oh-my-zsh && \
-		git am < ${PWD}/zsh/0001-Disable-automatic-updates.patch || \
 		git am --abort
 
 airlinepatch:
