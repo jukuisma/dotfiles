@@ -125,18 +125,6 @@ function git-far () {
     git stash drop
 }
 
-function plugins () {
-    git clone --depth=1 \
-        https://github.com/VundleVim/Vundle.vim.git \
-        ~/.vim/bundle/Vundle.vim
-    git clone --depth=1 \
-        https://github.com/ohmyzsh/ohmyzsh.git \
-        ~/.oh-my-zsh
-    git clone --depth=1 \
-        https://github.com/zsh-users/zsh-autosuggestions \
-        ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-}
-
 function virt-install-debian () {
     domain="$1"
     virt-install \

@@ -3,7 +3,7 @@ PWD = $(shell pwd)
 all: vim neovim zsh git tmux radare2 gdb
 patch: patchppuccin ohmypatch airlinepatch
 .PHONY: vim neovim zsh git tmux radare2 gdb \
-	patch patchppuccin ohmypatch airlinepatch
+	plugins patch patchppuccin ohmypatch airlinepatch
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -29,6 +29,18 @@ radare2:
 
 gdb:
 	cp gdb/gdbinit ~/.gdbinit
+
+plugins:
+	git clone --depth=1 \
+		https://github.com/VundleVim/Vundle.vim.git \
+		~/.vim/bundle/Vundle.vim || true
+	git clone --depth=1 \
+		https://github.com/ohmyzsh/ohmyzsh.git \
+		~/.oh-my-zsh || true
+	git clone --depth=1 \
+		https://github.com/zsh-users/zsh-autosuggestions \
+		~/.oh-my-zsh/custom/plugins/zsh-autosuggestions || true
+	nvim -c 'PluginInstall' -c 'qa'
 
 patchppuccin:
 	cd ~/.vim/bundle/nvim/lua/catppuccin && \
