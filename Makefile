@@ -1,6 +1,7 @@
 PWD = $(shell pwd)
+SOFTWARE = vim neovim htop strace xxd tree make gcc gdb fzf fd-find ripgrep zsh
 
-all: vim neovim zsh git tmux radare2 gdb
+all: vim neovim zsh git tmux radare2 gdb plugins patch
 patch: patchppuccin airlinepatch
 .PHONY: vim neovim zsh git tmux radare2 gdb \
 	plugins patch patchppuccin airlinepatch
@@ -51,6 +52,12 @@ airlinepatch:
 	cd ~/.vim/bundle/vim-airline && \
 		git am < ${PWD}/neovim/0002-Patch-UTF-8-symbols.patch || \
 		git am --abort
+
+debian:
+	sudo apt-get -y install ${SOFTWARE}
+
+fedora:
+	sudo dnf -y install ${SOFTWARE}
 
 fortunes:
 	gpg -d radare2/fortunes.gpg >> ~/github/radare2/doc/fortunes.fun
