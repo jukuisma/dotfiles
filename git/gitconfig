@@ -18,8 +18,8 @@
     ui = true
     pager = true
 
-[commit]
-    gpgsign = true
+# [commit]
+#     gpgsign = true
 
 [rebase]
     autosquash = true
