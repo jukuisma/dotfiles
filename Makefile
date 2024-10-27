@@ -1,9 +1,9 @@
 PWD = $(shell pwd)
 SOFTWARE = vim neovim htop strace xxd tree make gcc gdb fzf fd-find ripgrep zsh
 
-all: vim neovim zsh git tmux radare2 gdb plugins patch
+all: vim neovim zsh git tmux radare2 gdb alacritty plugins patch
 patch: patchppuccin airlinepatch
-.PHONY: vim neovim zsh git tmux radare2 gdb \
+.PHONY: vim neovim zsh git tmux radare2 gdb alacritty \
 	plugins patch patchppuccin airlinepatch
 
 vim:
@@ -30,6 +30,10 @@ radare2:
 
 gdb:
 	cp gdb/gdbinit ~/.gdbinit
+
+alacritty:
+	mkdir -p ~/.config/alacritty/
+	cp alacritty/* ~/.config/alacritty/
 
 plugins:
 	git clone --depth=1 \
