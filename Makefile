@@ -1,9 +1,9 @@
 PWD = $(shell pwd)
-SOFTWARE = vim neovim htop strace xxd tree make gcc gdb fzf fd-find ripgrep zsh
+SOFTWARE = vim neovim htop strace xxd tree make gcc gdb fzf fd-find ripgrep fish
 
-all: vim neovim zsh fish git tmux radare2 gdb alacritty plugins patch
+all: vim neovim fish git tmux radare2 gdb alacritty bin plugins patch
 patch: patchppuccin airlinepatch
-.PHONY: vim neovim zsh fish git tmux radare2 gdb alacritty \
+.PHONY: vim neovim fish git tmux radare2 gdb alacritty bin \
 	plugins patch patchppuccin airlinepatch
 
 vim:
@@ -14,9 +14,6 @@ neovim:
 	mkdir -p ~/.config/nvim
 	cp neovim/init.vim ~/.config/nvim/
 
-zsh:
-	cp zsh/zshrc ~/.zshrc
-
 fish:
 	cp fish/* ~/.config/fish/conf.d/
 
@@ -25,8 +22,6 @@ git:
 
 tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
-	mkdir -p ~/.local/bin/
-	cp tmux/tmux-sessionizer ~/.local/bin/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
@@ -38,16 +33,14 @@ alacritty:
 	mkdir -p ~/.config/alacritty/
 	cp alacritty/* ~/.config/alacritty/
 
+bin:
+	mkdir -p ~/.local/bin/
+	cp bin/* ~/.local/bin/
+
 plugins:
 	git clone --depth=1 \
 		https://github.com/VundleVim/Vundle.vim.git \
 		~/.vim/bundle/Vundle.vim || true
-	git clone --depth=1 \
-		https://github.com/ohmyzsh/ohmyzsh.git \
-		~/.oh-my-zsh || true
-	git clone --depth=1 \
-		https://github.com/zsh-users/zsh-autosuggestions \
-		~/.oh-my-zsh/custom/plugins/zsh-autosuggestions || true
 	nvim -c 'PluginInstall' -c 'qa'
 
 patchppuccin:

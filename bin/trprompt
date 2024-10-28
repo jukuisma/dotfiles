@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+export PROMPT=$(echo $PROMPT | sed 's/ $(git_prompt_info)//')

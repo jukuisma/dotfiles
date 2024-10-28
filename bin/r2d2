@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+file="$1"
+r2 -nqc 'px $s' $file | less --header=1

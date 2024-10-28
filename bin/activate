@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+source venv/bin/activate
+export PROMPT=$(echo $PROMPT | sed 's/(venv) ╭─/╭─(venv) /')

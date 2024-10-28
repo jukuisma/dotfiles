@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+selected=$(ls ~/.gitconfig_* | fzf)
+cp "$selected" ~/.gitconfig

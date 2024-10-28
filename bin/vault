@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+entry="$1"
+keepassxc-cli clip -k $KEEPASSXC_KEY $KEEPASSXC_DB $entry 0

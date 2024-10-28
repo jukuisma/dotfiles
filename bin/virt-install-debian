@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+domain="$1"
+virt-install \
+    --name $domain \
+    --ram 8192 --vcpus 4 \
+    --disk pool=virt,size=20 \
+    --os-variant debian12 \
+    --graphics none \
+    --console pty,target_type=serial \
+    --location 'https://ftp.debian.org/debian/dists/bookworm/main/installer-amd64/' \
+    --extra-args 'console=ttyS0,115200n8 serial'
