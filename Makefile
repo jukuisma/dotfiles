@@ -15,6 +15,7 @@ neovim:
 	cp neovim/init.vim ~/.config/nvim/
 
 fish:
+	mkdir -p ~/.config/fish/conf.d/
 	cp fish/* ~/.config/fish/conf.d/
 
 git:
