@@ -29,8 +29,8 @@ if status is-interactive
     abbr --add vim! /usr/bin/vim
     abbr --add vi! /usr/bin/vim
     abbr --add v! /usr/bin/vim
-    abbr --add vimb vim -b
-    abbr --add vimd vim -d
+    abbr --add vimb nvim -b
+    abbr --add vimd nvim -d
 
     # Misc
     abbr --add ccat batcat
