@@ -1,6 +1,8 @@
 if status is-interactive
+
     # Slightly modified Astronaut prompt
     function fish_prompt --description 'Write out the prompt'
+
         set -l last_status $status
         set -l normal (set_color normal)
         set -l status_color (set_color brgreen)
@@ -29,5 +31,7 @@ if status is-interactive
         echo -n -s '╭─' (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color
         echo -s (fish_vcs_prompt) $normal ' ' $prompt_status
         echo -n -s '╰─➤' $status_color ' ' $normal
+
     end
+
 end

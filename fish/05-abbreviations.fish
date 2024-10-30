@@ -1,4 +1,5 @@
 if status is-interactive
+
     # Git
     abbr --add ga git add
     abbr --add gb git blame
@@ -40,4 +41,5 @@ if status is-interactive
     abbr --add rtop radeontop -c
     abbr --add j sudo journalctl
     abbr --add s sudo systemctl
+
 end

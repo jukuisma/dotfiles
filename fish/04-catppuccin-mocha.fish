@@ -1,4 +1,5 @@
 if status is-interactive
+
     # Catppuccin Mocha
     set fish_color_normal cdd6f4
     set fish_color_command 89b4fa
@@ -26,4 +27,5 @@ if status is-interactive
     set fish_pager_color_prefix f5c2e7
     set fish_pager_color_completion cdd6f4
     set fish_pager_color_description 6c7086
+
 end
