@@ -22,6 +22,11 @@ if status is-interactive
             end
         end
 
+        # Color the prompt differently on remote hosts
+        if test "$SSH_CLIENT"
+            set cwd_color (set_color $fish_color_cwd_root)
+        end
+
         # Color the prompt in red on error
         if test $last_status -ne 0
             set status_color (set_color $fish_color_error)
