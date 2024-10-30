@@ -9,4 +9,8 @@ if status is-interactive
     bind \cy --mode insert accept-autosuggestion
     bind -k --mode insert nul accept-autosuggestion
 
+    # Emacs
+    bind --mode insert \ce end-of-line
+    bind --mode insert \ca beginning-of-line
+
 end
