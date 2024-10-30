@@ -1,6 +1,12 @@
 if status is-interactive
-    # Clear terminal and repaint after exiting tmux to avoid buggy behavior
-    bind \cf "tmux-sessionizer; clear; commandline -f repaint"
-    bind \cY accept-autosuggestion
-    bind -k nul accept-autosuggestion
+
+    # Bind C-f to run tmux-sessionizer in both normal and insert modes.
+    # Clear terminal and repaint after exiting tmux to avoid buggy behavior.
+    bind \cf --mode default "tmux-sessionizer; clear; commandline -f repaint"
+    bind \cf --mode insert "tmux-sessionizer; clear; commandline -f repaint"
+
+    # Bind C-y and C-space to accept autosuggestions.
+    bind \cy --mode insert accept-autosuggestion
+    bind -k --mode insert nul accept-autosuggestion
+
 end
