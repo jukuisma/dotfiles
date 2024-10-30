@@ -1,10 +1,17 @@
 PWD = $(shell pwd)
-SOFTWARE = vim neovim htop strace xxd tree make gcc gdb fzf fd-find ripgrep fish
+USER = $(shell whoami)
 
-all: vim neovim fish git tmux radare2 gdb alacritty bin plugins patch
+SW_COMMON = vim neovim htop strace tree make gcc gdb fzf fd-find ripgrep fish
+SW_DEBIAN = ${SW_COMMON} xxd
+SW_FEDORA = ${SW_COMMON} xxd
+SW_RHEL = ${SW_COMMON} util-linux-user
+
+all: vim neovim fish chsh git tmux radare2 gdb alacritty bin plugins patch
 patch: patchppuccin airlinepatch
-.PHONY: vim neovim fish git tmux radare2 gdb alacritty bin \
-	plugins patch patchppuccin airlinepatch
+
+.PHONY: vim neovim fish chsh git tmux radare2 gdb alacritty bin \
+	plugins patch patchppuccin airlinepatch \
+	debian fedora rhel
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -17,6 +24,9 @@ neovim:
 fish:
 	mkdir -p ~/.config/fish/conf.d/
 	cp fish/* ~/.config/fish/conf.d/
+
+chsh:
+	sudo chsh -s /bin/fish ${USER}
 
 git:
 	cp git/gitconfig ~/.gitconfig
@@ -55,10 +65,13 @@ airlinepatch:
 		git am --abort
 
 debian:
-	sudo apt-get -y install ${SOFTWARE}
+	sudo apt-get -y install ${SW_DEBIAN}
 
 fedora:
-	sudo dnf -y install ${SOFTWARE}
+	sudo dnf -y install ${SW_FEDORA}
+
+rhel:
+	sudo dnf -y install ${SW_RHEL}
 
 fortunes:
 	gpg -d radare2/fortunes.gpg >> ~/github/radare2/doc/fortunes.fun
