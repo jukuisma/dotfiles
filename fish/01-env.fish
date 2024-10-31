@@ -3,6 +3,8 @@ if status is-interactive
     fish_add_path ~/.local/bin/
 
     set -gx fish_escape_delay_ms 10
+    set -gx LESS -R
+    set -gx PAGER less
     set -gx EDITOR nvim
     set -gx KEEPASSXC_DB
     set -gx KEEPASSXC_KEY
