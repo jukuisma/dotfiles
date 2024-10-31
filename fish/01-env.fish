@@ -6,6 +6,7 @@ if status is-interactive
     set -gx LESS -R
     set -gx PAGER less
     set -gx EDITOR nvim
+    set -gx CLICOLOR 1 # tree
     set -gx KEEPASSXC_DB
     set -gx KEEPASSXC_KEY
     set -gx LIBVIRT_DEFAULT_URI qemu:///system
