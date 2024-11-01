@@ -1,6 +1,7 @@
 if status is-interactive
 
     fish_add_path ~/.local/bin/
+    fish_add_path ~/.cargo/bin/
 
     set -gx fish_escape_delay_ms 10
     set -gx LESS -R
