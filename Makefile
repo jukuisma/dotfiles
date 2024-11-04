@@ -71,6 +71,7 @@ fedora:
 	sudo dnf -y install ${SW_FEDORA}
 
 rhel:
+	sudo dnf -y install epel-release
 	sudo dnf -y install ${SW_RHEL}
 
 fortunes:
