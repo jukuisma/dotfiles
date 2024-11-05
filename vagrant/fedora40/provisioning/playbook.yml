@@ -28,10 +28,10 @@
         repo: "https://github.com/jukuisma/dotfiles.git"
         dest: /home/vagrant/github/dotfiles
 
-    - name: Install RHEL specific dependencies
+    - name: Install Fedora specific dependencies
       make:
         chdir: /home/vagrant/github/dotfiles
-        target: rhel
+        target: fedora
 
     - name: Configure all software
       make:
