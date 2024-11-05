@@ -1,0 +1,39 @@
+---
+
+- hosts: all
+  tasks:
+
+    - name: Update all packages
+      become: yes
+      apt:
+        name: "*"
+        state: latest
+        update_cache: yes
+
+    - name: Install build dependencies
+      become: yes
+      apt:
+        name:
+          - git
+          - make
+        state: latest
+
+    - name: Create github directory
+      file:
+        path: /home/vagrant/github
+        state: directory
+        mode: 0755
+
+    - name: Clone dotfiles
+      git:
+        repo: "https://github.com/jukuisma/dotfiles.git"
+        dest: /home/vagrant/github/dotfiles
+
+    - name: Install Debian specific dependencies
+      make:
+        chdir: /home/vagrant/github/dotfiles
+        target: debian
+
+    - name: Configure all software
+      make:
+        chdir: /home/vagrant/github/dotfiles

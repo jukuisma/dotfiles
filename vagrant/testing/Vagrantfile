@@ -18,4 +18,7 @@ Vagrant.configure("2") do |config|
     # hypervisor w/ `$ ss -an | grep 5700`.
     # lv.graphics_type = "none"
   end
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "provisioning/playbook.yml"
+  end
 end
