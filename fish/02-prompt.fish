@@ -33,7 +33,14 @@ if status is-interactive
             set prompt_status $status_color "[" $last_status "]" $normal
         end
 
-        echo -n -s '╭─' (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color
+        # Handle python virtual environments
+        if test $VIRTUAL_ENV
+            echo -n -s '╭─(venv) '
+        else
+            echo -n -s '╭─'
+        end
+
+        echo -n -s (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color
         echo -s (fish_vcs_prompt) $normal ' ' $prompt_status
         echo -n -s '╰─➤' $status_color ' ' $normal
 

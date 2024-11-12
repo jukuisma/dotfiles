@@ -33,6 +33,7 @@ if status is-interactive
     abbr --add vimd nvim -d
 
     # Misc
+    abbr --add activate source venv/bin/activate.fish
     abbr --add ccat batcat
     abbr --add c clear
     abbr --add clipnt wl-copy -c
