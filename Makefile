@@ -1,15 +1,16 @@
 PWD = $(shell pwd)
 USER = $(shell whoami)
 
-SW_COMMON = vim neovim htop strace tree make gcc gdb fzf fd-find ripgrep fish
+SW_COMMON = vim neovim htop strace tree make gcc gdb \
+	    fzf fd-find ripgrep fish wget curl bat
 SW_DEBIAN = ${SW_COMMON} xxd
 SW_FEDORA = ${SW_COMMON} xxd
 SW_RHEL = ${SW_COMMON} util-linux-user
 
-all: vim neovim fish chsh git tmux radare2 gdb alacritty bin plugins patch
+all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins patch
 patch: patchppuccin airlinepatch
 
-.PHONY: vim neovim fish chsh git tmux radare2 gdb alacritty bin \
+.PHONY: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat \
 	plugins patch patchppuccin airlinepatch \
 	debian fedora rhel
 
@@ -47,6 +48,14 @@ alacritty:
 bin:
 	mkdir -p ~/.local/bin/
 	cp bin/* ~/.local/bin/
+
+bat:
+	mkdir -p ~/.config/bat/themes/
+	wget -nc -P \
+		~/.config/bat/themes/ \
+		https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+	cp bat/config ~/.config/bat/
+	bat cache --build
 
 plugins:
 	git clone --depth=1 \

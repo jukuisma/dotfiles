@@ -34,7 +34,6 @@ if status is-interactive
 
     # Misc
     abbr --add activate source venv/bin/activate.fish
-    abbr --add ccat batcat
     abbr --add c clear
     abbr --add clipnt wl-copy -c
     abbr --add connect-xm5 bluetoothctl connect $XM5_UUID
