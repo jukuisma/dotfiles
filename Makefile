@@ -75,6 +75,9 @@ airlinepatch:
 
 debian:
 	sudo apt-get -y install ${SW_DEBIAN}
+	mkdir -p ~/.local/bin
+	ln -sf /usr/bin/batcat ~/.local/bin/bat
+	ln -sf /usr/bin/fdfind ~/.local/bin/fd
 
 fedora:
 	sudo dnf -y install ${SW_FEDORA}

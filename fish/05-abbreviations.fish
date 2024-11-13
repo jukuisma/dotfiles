@@ -6,6 +6,7 @@ if status is-interactive
     abbr --add gc git commit
     abbr --add gco git checkout
     abbr --add gd git diff
+    abbr --add bd batdiff
     abbr --add gl git log
     abbr --add gm git merge
     abbr --add gp git pull
