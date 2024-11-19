@@ -3,6 +3,11 @@
 - hosts: all
   tasks:
 
+    - name: Install python3-libdnf5
+      become: yes
+      shell:
+        cmd: dnf -y install python3-libdnf5
+
     - name: Update all packages
       become: yes
       dnf:
@@ -36,3 +41,14 @@
     - name: Configure all software
       make:
         chdir: /home/vagrant/github/dotfiles
+
+    - name: Set hostname
+      become: yes
+      lineinfile:
+        path: /etc/hostname
+        line: fedora
+        create: yes
+
+    - name: Reboot
+      become: yes
+      reboot:
