@@ -63,6 +63,7 @@ map <leader>q :q<CR>
 map <leader>w :wincmd w<CR>
 map <leader>x :x<CR>
 map <leader>j :e #<CR>
+map <leader>s :%s/
 map <leader><leader> :Files<CR>
 map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
@@ -94,7 +95,7 @@ map <leader>. @@
 map <leader>, @:
 
 " Set pdb breakpoint
-nmap <leader>st Oimport pdb; pdb.set_trace()<Esc>j
+nmap <leader>b Oimport pdb; pdb.set_trace()<Esc>j
 
 " Faster navigation
 map J }
