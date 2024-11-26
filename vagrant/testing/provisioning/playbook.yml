@@ -18,6 +18,20 @@
           - make
         state: latest
 
+    - name: Define locales to be generated
+      become: yes
+      lineinfile:
+        path: /etc/locale.gen
+        line: "en_IE.UTF-8 UTF-8"
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Generate locales
+      become: yes
+      shell:
+        cmd: locale-gen
+
     - name: Create github directory
       file:
         path: /home/vagrant/github
