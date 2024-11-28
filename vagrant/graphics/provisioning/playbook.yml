@@ -32,6 +32,13 @@
       shell:
         cmd: locale-gen
 
+    - name: Set default locales
+      become: yes
+      lineinfile:
+        path: /etc/default/locale
+        regexp: '^LANG='
+        line: LANG=en_IE.UTF-8
+
     - name: Create github directory
       file:
         path: /home/vagrant/github
