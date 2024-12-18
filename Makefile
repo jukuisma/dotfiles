@@ -40,6 +40,7 @@ radare2:
 
 gdb:
 	cp gdb/gdbinit ~/.gdbinit
+	cp gdb/gdbearlyinit ~/.gdbearlyinit
 
 alacritty:
 	mkdir -p ~/.config/alacritty/
