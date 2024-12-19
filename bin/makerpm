@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# $ sudo dnf install gitlab-ci-pipeline rpmdevtools
+
+if ! grep AlmaLinux /etc/os-release; then
+    exit 1
+fi
+
+specpath="include/rhel9"
+rm -rf rpmbuild/
+
+create-archive.sh
+preprocess-spec-m4-macros.sh "$specpath"
+
+for spec_path in rpmbuild/SPECS/*.spec; do
+    sudo dnf builddep -y "$spec_path"
+done
+
+build-rpm.sh
