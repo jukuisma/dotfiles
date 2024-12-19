@@ -42,5 +42,6 @@ if status is-interactive
     abbr --add rtop radeontop -c
     abbr --add j sudo journalctl
     abbr --add s sudo systemctl
+    abbr --add od objdump -M intel -D
 
 end
