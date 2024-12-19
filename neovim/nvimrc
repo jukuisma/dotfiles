@@ -94,8 +94,9 @@ map <C-n> :norm<Space>
 map <leader>. @@
 map <leader>, @:
 
-" Set pdb breakpoint
-nmap <leader>b Oimport pdb; pdb.set_trace()<Esc>j
+" Set breakpoints
+nmap <leader>di O__asm__("int3");<Esc>j
+nmap <leader>dp Oimport pdb; pdb.set_trace()<Esc>j
 
 " Faster navigation
 map J }
