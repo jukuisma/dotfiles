@@ -48,7 +48,7 @@ set nu rnu
 set ff=unix
 
 " Set C specific options
-autocmd FileType c setlocal shiftwidth=8 noexpandtab
+autocmd FileType c setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " Set leader to space
 let mapleader = "\<Space>"
