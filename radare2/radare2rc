@@ -1,5 +1,5 @@
 e scr.color = 3
-e scr.theme = dark
+e scr.theme = catppuccin
 e scr.prompt.vi = true
 e scr.utf8.curvy = true
 e asm.syntax = intel
