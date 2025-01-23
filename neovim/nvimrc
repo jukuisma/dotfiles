@@ -63,7 +63,8 @@ map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>x :x<CR>
 map <leader>j :e #<CR>
-map <leader>s :%s/
+nmap <leader>s :%s/
+vmap <leader>s :s/
 map <leader><leader> :Files<CR>
 map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
