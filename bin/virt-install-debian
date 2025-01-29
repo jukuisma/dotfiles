@@ -4,7 +4,7 @@ domain="$1"
 virt-install \
     --name $domain \
     --ram 8192 --vcpus 4 \
-    --disk pool=virt,size=20 \
+    --disk size=20 \
     --os-variant debian12 \
     --graphics none \
     --console pty,target_type=serial \
