@@ -27,7 +27,7 @@ fish:
 	cp fish/* ~/.config/fish/conf.d/
 
 chsh:
-	sudo chsh -s /bin/fish ${USER}
+	sudo chsh -s /usr/bin/fish ${USER}
 
 git:
 	cp git/gitconfig ~/.gitconfig
@@ -56,7 +56,7 @@ bat:
 		~/.config/bat/themes/ \
 		https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 	cp bat/config ~/.config/bat/
-	bat cache --build
+	bat cache --build || batcat cache --build
 
 plugins:
 	git clone --depth=1 \
