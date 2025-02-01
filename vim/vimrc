@@ -38,8 +38,11 @@ let mapleader = "\<Space>"
 
 " Map yanking, pasting and deleting to system clipboard
 map <leader>y "+y
+map <leader>Y "+Y
 map <leader>p "+p
+map <leader>P "+P
 map <leader>d "+d
+map <leader>D "+D
 
 " File commands
 map <leader>q :q<CR>
