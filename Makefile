@@ -3,9 +3,9 @@ USER = $(shell whoami)
 
 SW_COMMON = vim neovim htop strace tree make gcc gdb \
 	    fzf fd-find ripgrep fish wget curl bat
-SW_DEBIAN = ${SW_COMMON} xxd
-SW_FEDORA = ${SW_COMMON} xxd
-SW_RHEL = ${SW_COMMON} util-linux-user
+SW_DEBIAN = ${SW_COMMON} xxd universal-ctags
+SW_FEDORA = ${SW_COMMON} xxd ctags
+SW_RHEL = ${SW_COMMON} util-linux-user ctags
 
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins patch
 patch: patchppuccin airlinepatch
