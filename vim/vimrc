@@ -52,6 +52,12 @@ map <leader>j :e #<CR>
 nmap <leader>s :%s/
 vmap <leader>s :s/
 
+" ctags
+map <leader>td <C-]>
+map <leader>tn <C-w><C-]>
+map <leader>tl g]
+map <leader>tj <C-t>
+
 " Decimal to binary, hex and octal conversions
 " Match all numbers in the current line and prompt for confirmation
 map <leader>cb :s/\d\+/\=printf("0b%b", submatch(0))/gc<CR>

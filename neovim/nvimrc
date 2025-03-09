@@ -74,6 +74,12 @@ map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
 map <leader>fg :Rg<CR>
 
+" ctags
+map <leader>td <C-]>
+map <leader>tl g]
+map <leader>tn <C-w><C-]>
+map <leader>tj <C-t>
+
 " Decimal to binary, hex and octal conversions
 " Match all numbers in the current line and prompt for confirmation
 map <leader>cb :s/\d\+/\=printf("0b%b", submatch(0))/gc<CR>
