@@ -77,7 +77,7 @@ map <leader>fg :Rg<CR>
 " ctags
 map <leader>td <C-]>
 map <leader>tl g]
-map <leader>tn <C-w><C-]>
+map <leader>th <C-w><C-]>
 map <leader>tj <C-t>
 
 " Decimal to binary, hex and octal conversions

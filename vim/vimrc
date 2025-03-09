@@ -54,7 +54,7 @@ vmap <leader>s :s/
 
 " ctags
 map <leader>td <C-]>
-map <leader>tn <C-w><C-]>
+map <leader>th <C-w><C-]>
 map <leader>tl g]
 map <leader>tj <C-t>
 
