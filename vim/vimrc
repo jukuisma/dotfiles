@@ -71,7 +71,7 @@ vmap <leader>e !xxd<CR>
 vmap <leader>r !xxd -r<CR>
 
 " Run norm command
-map <C-n> :norm<Space>
+map <leader>n :norm<Space>
 
 " Repeat last macro && ex command
 map <leader>. @@
