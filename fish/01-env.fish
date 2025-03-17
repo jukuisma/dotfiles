@@ -14,10 +14,6 @@ if status is-interactive
     set -gx VAGRANT_DEFAULT_PROVIDER libvirt
     set -gx XM5_UUID
 
-    # Do not show vi mode on the prompt
-    function fish_mode_prompt; end
-    set -gx fish_key_bindings fish_vi_key_bindings
-
     # Do not edit prompt by venv/bin/activate.fish.
     # This is handled by 02-prompt.fish instead.
     set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
