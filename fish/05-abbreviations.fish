@@ -43,5 +43,6 @@ if status is-interactive
     abbr --add j sudo journalctl
     abbr --add s sudo systemctl
     abbr --add od objdump -M intel -D
+    abbr --add ct ctags -R \*
 
 end
