@@ -61,8 +61,8 @@ map <leader>tj <C-t>
 " Decimal to binary, hex and octal conversions
 " Match all numbers in the current line and prompt for confirmation
 map <leader>cb :s/\d\+/\=printf("0b%b", submatch(0))/gc<CR>
-map <leader>ch :s/\d\+/\=printf("0x%x", submatch(0))/gc<CR>
 map <leader>co :s/\d\+/\=printf("0o%o", submatch(0))/gc<CR>
+map <leader>cx :s/\d\+/\=printf("0x%x", submatch(0))/gc<CR>
 
 " xxd
 nmap <leader>e :%!xxd<CR>
