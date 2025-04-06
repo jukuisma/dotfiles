@@ -10,7 +10,7 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins patch
 patch: patchppuccin airlinepatch
 
-.PHONY: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat \
+.PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin bat \
 	plugins patch patchppuccin airlinepatch \
 	debian fedora rhel
 
@@ -34,6 +34,12 @@ git:
 
 tmux:
 	cp tmux/tmux.conf ~/.tmux.conf
+
+dconf:
+	cat dconf/keybindings | \
+		dconf load /org/gnome/desktop/wm/keybindings/
+	cat dconf/media-keys | \
+		dconf load /org/gnome/settings-daemon/plugins/media-keys/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
