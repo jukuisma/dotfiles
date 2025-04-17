@@ -1,10 +1,15 @@
 #!/usr/bin/bash
 
+CPUS="${CPUS:=4}"
+DISK="${DISK:=20}"
+RAM="${RAM:=8192}"
+
 domain="$1"
+
 virt-install \
-    --name $domain \
-    --ram 8192 --vcpus 4 \
-    --disk size=20 \
+    --name "$domain" \
+    --ram "$RAM" --vcpus "$CPUS" \
+    --disk size="$DISK" \
     --os-variant debian12 \
     --graphics none \
     --console pty,target_type=serial \
