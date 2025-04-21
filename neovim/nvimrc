@@ -116,6 +116,10 @@ map K {
 map H b
 map L w
 
+" Jumplist navigation
+map <C-j> <C-o>
+map <C-k> <C-i>
+
 " Set sensible navigation repeat directions
 noremap , ;
 noremap ; ,
