@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 grep -E '^[0-9]' ~/kernel/linux-*/arch/x86/entry/syscalls/syscall_64.tbl |\
     fzf |\

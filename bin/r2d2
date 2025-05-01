@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 file="$1"
 r2 -nqc 'px $s' $file | less --header=1

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 if [ "$#" -ne 2 ]; then
     echo "Must be 2 parameters: e.g. 'replace replace_this with_this'"

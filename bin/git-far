@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 pattern="$1"
 if [ -z "$pattern" ]; then

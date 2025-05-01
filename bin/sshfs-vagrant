@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 host="$1"
 sshfs -o idmap=user $host:/home/vagrant/scratch ~/scratch
