@@ -14,10 +14,6 @@ if status is-interactive
     set -gx VAGRANT_DEFAULT_PROVIDER libvirt
     set -gx XM5_UUID
 
-    # Do not edit prompt by venv/bin/activate.fish.
-    # This is handled by 02-prompt.fish instead.
-    set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
-
     # Color man w/ bat
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
     set -gx MANROFFOPT -c
