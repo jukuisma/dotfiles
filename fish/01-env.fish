@@ -18,4 +18,10 @@ if status is-interactive
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
     set -gx MANROFFOPT -c
 
+    if grep nixos /etc/os-release > /dev/null 2>&1
+        set -gx BIN /run/current-system/sw/bin
+    else
+        set -gx BIN /usr/bin
+    end
+
 end
