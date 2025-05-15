@@ -9,8 +9,8 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags
 
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins
 
-.PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin bat \
-	plugins debian fedora rhel
+.PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin share \
+	bat plugins debian fedora rhel
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -50,9 +50,13 @@ alacritty:
 	mkdir -p ~/.config/alacritty/
 	cp alacritty/* ~/.config/alacritty/
 
-bin:
+bin: share
 	mkdir -p ~/.local/bin/
 	cp bin/* ~/.local/bin/
+
+share:
+	mkdir -p ~/.local/share/debian/
+	cp share/debian/* ~/.local/share/debian/
 
 bat:
 	mkdir -p ~/.config/bat/themes/
