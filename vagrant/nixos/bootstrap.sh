@@ -2,13 +2,17 @@
 
 set -xe
 
+if [ "$(id -u)" -ne 0 ]; then
+    exit 1
+fi
+
 if ! grep -- installation-cd-minimal /etc/nixos/configuration.nix; then
     exit 1
 fi
 
 # Partitioning
-sudo wipefs --all /dev/vda
-sudo fdisk /dev/vda <<EOF
+wipefs --all /dev/vda
+fdisk /dev/vda <<EOF
 o
 n
 p
@@ -24,24 +28,24 @@ w
 EOF
 
 # Filesystems
-sudo mkfs.fat -F 32 /dev/vda1
-sudo mkfs.ext4 /dev/vda2
+mkfs.fat -F 32 /dev/vda1
+mkfs.ext4 /dev/vda2
 
 # Mount
-sudo mount /dev/vda2 /mnt
-sudo mkdir /mnt/boot
-sudo mount /dev/vda1 /mnt/boot
+mount /dev/vda2 /mnt
+mkdir /mnt/boot
+mount /dev/vda1 /mnt/boot
 
 # Swap
-sudo dd if=/dev/zero of=/mnt/.swapfile bs=1024 count=2M
-sudo chmod 600 /mnt/.swapfile
-sudo mkswap /mnt/.swapfile
-sudo swapon /mnt/.swapfile
+dd if=/dev/zero of=/mnt/.swapfile bs=1024 count=2M
+chmod 600 /mnt/.swapfile
+mkswap /mnt/.swapfile
+swapon /mnt/.swapfile
 
 # Config
-sudo nixos-generate-config --root /mnt
-sudo cp configuration.nix /mnt/etc/nixos/configuration.nix
+nixos-generate-config --root /mnt
+cp configuration.nix /mnt/etc/nixos/configuration.nix
 
 # Install
 cd /mnt
-sudo nixos-install
+nixos-install
