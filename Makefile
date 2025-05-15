@@ -7,12 +7,10 @@ SW_DEBIAN = ${SW_COMMON} xxd universal-ctags
 SW_FEDORA = ${SW_COMMON} xxd ctags
 SW_RHEL = ${SW_COMMON} util-linux-user ctags
 
-all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins patch
-patch: patchppuccin airlinepatch
+all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin bat \
-	plugins patch patchppuccin airlinepatch \
-	debian fedora rhel
+	plugins debian fedora rhel
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -69,16 +67,6 @@ plugins:
 		https://github.com/VundleVim/Vundle.vim.git \
 		~/.vim/bundle/Vundle.vim || true
 	nvim -c 'PluginInstall' -c 'qa'
-
-patchppuccin:
-	cd ~/.vim/bundle/nvim/lua/catppuccin && \
-		git am < ${PWD}/neovim/0001-Patch-mocha-background.patch || \
-		git am --abort
-
-airlinepatch:
-	cd ~/.vim/bundle/vim-airline && \
-		git am < ${PWD}/neovim/0002-Patch-UTF-8-symbols.patch || \
-		git am --abort
 
 debian:
 	sudo apt-get -y install ${SW_DEBIAN}
