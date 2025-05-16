@@ -10,6 +10,11 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
+  swapDevices = [{
+    device = "/.swapfile";
+    size = 2 * 1024;
+  }];
+
   boot.kernelParams = [ "console=ttyS0,115200n8" ];
   boot.loader.grub.extraConfig = "
     serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1
