@@ -24,4 +24,6 @@ if status is-interactive
         set -gx BIN /usr/bin
     end
 
+    set -gx GREET_ZPOOL false
+
 end
