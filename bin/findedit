@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+findedit () {
+    if [ "$#" -ne 1 ]; then
+        echo "1 parameter only: e.g.: findedit 'File contains This Text'"
+        return 1
+    fi
+
+    searchterm="$1"
+    rg -l "$searchterm" | \
+      fzf --preview "batcat --style=header,grid --color=always --line-range :300 {}" --height 70% --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --preview-window=bottom,80% | \
+      xargs -o nvim
+}
