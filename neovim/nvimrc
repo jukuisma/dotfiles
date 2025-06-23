@@ -75,6 +75,12 @@ map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
 map <leader>fg :Rg<CR>
 
+" Formatting
+nmap <leader>fj :%!jq<CR>
+nmap <leader>fx :%!xmllint --format -<CR>
+vmap <leader>fj !jq<CR>
+vmap <leader>fx !xmllint --format -<CR>
+
 " ctags
 map <leader>td <C-]>
 map <leader>tl g]

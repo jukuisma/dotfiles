@@ -44,6 +44,12 @@ map <leader>P "+P
 map <leader>d "+d
 map <leader>D "+D
 
+" Formatting
+nmap <leader>fj :%!jq<CR>
+nmap <leader>fx :%!xmllint --format -<CR>
+vmap <leader>fj !jq<CR>
+vmap <leader>fx !xmllint --format -<CR>
+
 " File commands
 map <leader>q :q<CR>
 map <leader>w :w<CR>
