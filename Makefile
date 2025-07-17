@@ -40,6 +40,8 @@ dconf:
 		dconf load /org/gnome/settings-daemon/plugins/media-keys/
 	cat dconf/character-repeat-speed | \
 		dconf load /org/gnome/desktop/peripherals/keyboard/
+	cat dconf/desktop-interface | \
+		dconf load /org/gnome/desktop/interface/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
