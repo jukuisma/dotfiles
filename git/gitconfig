@@ -32,3 +32,5 @@
 
 [pager]
     branch = false
+#     diff = "diff-so-fancy | less"
+#     show = "diff-so-fancy | less"

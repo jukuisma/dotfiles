@@ -73,6 +73,7 @@
     ctags
     gnumake
     git
+    diff-so-fancy
   ];
 
   programs.command-not-found.enable = false;
