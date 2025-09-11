@@ -11,9 +11,9 @@ virt-install \
     --arch aarch64 \
     --ram "$RAM" --vcpus "$CPUS" \
     --disk size="$DISK" \
-    --os-variant debian12 \
+    --os-variant debian13 \
     --graphics none \
     --initrd-inject="$HOME/.local/share/debian/preseed.cfg" \
     --console pty,target_type=serial \
-    --location 'https://ftp.debian.org/debian/dists/bookworm/main/installer-arm64/' \
+    --location 'https://ftp.debian.org/debian/dists/trixie/main/installer-arm64/' \
     --extra-args 'console=ttyS0,115200n8 serial'
