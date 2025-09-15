@@ -1,18 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
 
-  swapDevices = [{
-    device = "/.swapfile";
-    size = 2 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/.swapfile";
+      size = 2 * 1024;
+    }
+  ];
 
   boot.kernelParams = [ "console=ttyS0,115200n8" ];
   boot.loader.grub.extraConfig = "
@@ -42,38 +43,50 @@
   users.users.vagrant = {
     isNormalUser = true;
     description = "vagrant";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDG1RxSv4/jqqoE8LHgWpmUB1KsnjWYATn7ytFGD/Agh"
+    ];
   };
 
-  security.sudo.extraRules= [
-    { users = [ "vagrant" ];
+  security.sudo.extraRules = [
+    {
+      users = [ "vagrant" ];
       commands = [
-        { command = "ALL" ;
-          options= [ "NOPASSWD" "SETENV" ];
+        {
+          command = "ALL";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
         }
       ];
     }
   ];
 
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    wget
-    xxd
-    htop
-    strace
-    tree
-    gcc
-    gdb
-    fzf
-    fd
-    ripgrep
-    curl
     bat
     ctags
-    gnumake
-    git
+    curl
     diff-so-fancy
+    fd
+    fzf
+    gcc
+    gdb
+    git
+    gnumake
+    htop
+    neovim
+    nixfmt-rfc-style
+    ripgrep
+    strace
+    tree
+    vim
+    wget
+    xxd
   ];
 
   programs.command-not-found.enable = false;
