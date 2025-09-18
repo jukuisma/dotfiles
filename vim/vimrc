@@ -50,6 +50,7 @@ map <leader>D "+D
 " Formatting
 nmap <leader>fj :%!jq<CR>
 nmap <leader>fx :%!xmllint --format -<CR>
+nmap <leader>fn mm:%!nixfmt<CR>'mzz
 vmap <leader>fj !jq<CR>
 vmap <leader>fx !xmllint --format -<CR>
 
