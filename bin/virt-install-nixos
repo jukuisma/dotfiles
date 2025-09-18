@@ -12,4 +12,5 @@ virt-install \
     --disk size="$DISK" \
     --os-variant nixos-24.05 \
     --graphics none \
+    --boot uefi,nvram_template=/usr/share/edk2/ovmf/OVMF_VARS.fd \
     --cdrom /var/lib/libvirt/images/nixos-minimal.iso
