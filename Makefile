@@ -10,7 +10,7 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin share \
-	bat plugins debian fedora rhel
+	bat gpg plugins debian fedora rhel
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -69,6 +69,9 @@ bat:
 		https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 	cp bat/config ~/.config/bat/
 	bat cache --build || batcat cache --build
+
+gpg:
+	cp gpg/gpg.conf ~/.gnupg/gpg.conf
 
 plugins:
 	git clone --depth=1 \

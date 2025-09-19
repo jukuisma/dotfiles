@@ -1,7 +1,7 @@
 [user]
-    email = <EMAIL>
+    email = kuisma.juho+github@gmail.com
     name = Juho Kuisma
-    signingkey = <KEY>
+    signingkey = B02C1B5FD78B49F8A393E5A60CFC5704450EEE35
 
 [push]
     default = simple
@@ -18,11 +18,11 @@
     ui = true
     pager = true
 
-# [commit]
-#     gpgsign = true
+[commit]
+    gpgsign = true
 
-# [tag]
-#     gpgsign = true
+[tag]
+    gpgsign = true
 
 [rebase]
     autosquash = true
@@ -32,5 +32,5 @@
 
 [pager]
     branch = false
-#     diff = "diff-so-fancy | less"
-#     show = "diff-so-fancy | less"
+    diff = "diff-so-fancy | less"
+    show = "diff-so-fancy | less"
