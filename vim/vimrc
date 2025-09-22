@@ -97,7 +97,7 @@ nmap <leader>dP oimport pdb; pdb.set_trace()<Esc>k
 
 " Convert strace execve line into the corresponding command in place
 let @s = 'ds"f,x'
-nmap <leader>cc /execve<CR>f[yi[Vp100@s
+nmap <leader>cc 0f(yi[Vp100@s
 
 " Other snippets
 nmap <leader>` o```<CR>```<Esc>O
