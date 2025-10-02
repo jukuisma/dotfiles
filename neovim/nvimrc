@@ -77,7 +77,7 @@ map <leader><leader> :Files<CR>
 map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
 map <leader>fh :History<CR>
-map <leader>fg :Rg<CR>
+map <leader>fg :Rg<Space>
 
 " Formatting
 nmap <leader>fj :%!jq<CR>
