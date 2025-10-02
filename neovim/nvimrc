@@ -110,7 +110,7 @@ vmap <leader>e !xxd<CR>
 vmap <leader>r !xxd -r<CR>
 
 " Run norm command
-map <leader>n :norm<Space>
+map <C-n> :norm<Space>
 
 " Repeat last macro && ex command
 map <leader>. @@
@@ -140,6 +140,37 @@ map L w
 " Jumplist navigation
 map <C-j> <C-o>
 map <C-k> <C-i>
+
+" Netrw
+map <leader>cd :Explore<CR>
+let g:netrw_banner = 0
+let g:netrw_keepdir = 0
+hi! link netrwMarkFile Search
+
+function! NetrwMapping()
+    " Marks
+    nmap <buffer> <TAB> mf
+    vmap <buffer> <TAB> :norm mf<CR>
+    vmap <buffer> mf :norm mf<CR>
+    nmap <buffer> <Leader><TAB> mu
+    " Dotfiles
+    nmap <buffer> . gh
+    " Navigation
+    nmap <buffer> h -^
+    nmap <buffer> l <CR>
+    " Files
+    map <buffer> fd D
+    nmap <buffer> ff %:w<CR>:buffer #<CR>
+    nmap <buffer> fe R
+    nmap <buffer> fc mtmc
+    nmap <buffer> fm mtmm
+    nmap <buffer> fx mx
+    nmap <buffer> fl :echo join(netrw#Expose("netrwmarkfilelist"), "\n")<CR>
+endfunction
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
 
 " Set sensible navigation repeat directions
 noremap , ;
