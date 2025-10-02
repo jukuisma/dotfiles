@@ -10,7 +10,7 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin share \
-	bat gpg plugins debian fedora rhel
+	bat gpg plugins debian fedora rhel nixos
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -91,6 +91,9 @@ fedora:
 rhel:
 	sudo dnf -y install epel-release
 	sudo dnf -y install ${SW_RHEL}
+
+nixos: all
+	sudo nixos-rebuild switch --upgrade
 
 fortunes:
 	gpg -d radare2/fortunes.gpg >> ~/github/radare2/doc/fortunes.fun
