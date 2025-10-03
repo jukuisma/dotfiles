@@ -7,10 +7,10 @@ SW_DEBIAN = ${SW_COMMON} xxd universal-ctags
 SW_FEDORA = ${SW_COMMON} xxd ctags diff-so-fancy
 SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 
-all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat plugins
+all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin share \
-	bat gpg plugins debian fedora rhel nixos
+	bat gpg debian fedora rhel nixos
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -19,6 +19,7 @@ neovim:
 	cp neovim/nvimrc ~/.nvimrc
 	mkdir -p ~/.config/nvim
 	cp neovim/init.vim ~/.config/nvim/
+	cp neovim/plugins.vim ~/.config/nvim/
 
 fish:
 	mkdir -p ~/.config/fish/conf.d/
@@ -72,12 +73,6 @@ bat:
 
 gpg:
 	cp gpg/gpg.conf ~/.gnupg/gpg.conf
-
-plugins:
-	git clone --depth=1 \
-		https://github.com/VundleVim/Vundle.vim.git \
-		~/.vim/bundle/Vundle.vim || true
-	nvim -c 'PluginInstall' -c 'qa'
 
 debian:
 	sudo apt-get -y install ${SW_DEBIAN}

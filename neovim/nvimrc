@@ -1,21 +1,4 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'FooSoft/vim-argwrap'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-
-Plugin 'jukuisma/catppuccin-nvim'
-Plugin 'jukuisma/vim-airline'
-Plugin 'jukuisma/vim-airline-themes'
-
-call vundle#end()
+source ~/.config/nvim/plugins.vim
 
 set nocompatible
 syntax on
