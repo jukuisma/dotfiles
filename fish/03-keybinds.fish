@@ -1,15 +1,24 @@
 if status is-interactive
 
-    # Bind C-f to run tmux-sessionizer in both normal and insert modes.
+    if bind --key-names | grep '^space$' > /dev/null 2>&1
+        set NEW_KEYBINDS true
+    else
+        set NEW_KEYBINDS false
+    end
+
+    # Bind C-f to run tmux-sessionizer.
     # Clear terminal and repaint after exiting tmux to avoid buggy behavior.
-    bind \cf "tmux-sessionizer; clear; commandline -f repaint"
+    if $NEW_KEYBINDS
+        bind ctrl-f "tmux-sessionizer && clear && commandline -f repaint"
+    else
+        bind \cf "tmux-sessionizer && clear && commandline -f repaint"
+    end
 
-    # Bind C-y and C-space to accept autosuggestions.
-    bind \cy accept-autosuggestion
-    bind -k nul accept-autosuggestion
-
-    # Emacs
-    bind \ce end-of-line
-    bind \ca beginning-of-line
+    # Bind C-space to accept autosuggestions.
+    if $NEW_KEYBINDS
+        bind ctrl-space accept-autosuggestion
+    else
+        bind -k nul accept-autosuggestion
+    end
 
 end
