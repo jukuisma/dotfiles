@@ -94,6 +94,3 @@ rhel:
 
 nixos: all
 	sudo nixos-rebuild switch --upgrade
-
-fortunes:
-	gpg -d radare2/fortunes.gpg >> ~/github/radare2/doc/fortunes.fun
