@@ -43,6 +43,10 @@ dconf:
 		dconf load /org/gnome/desktop/peripherals/keyboard/
 	cat dconf/desktop-interface | \
 		dconf load /org/gnome/desktop/interface/
+	cat dconf/app-switcher | \
+		dconf load /org/gnome/shell/app/switcher/
+	cat dconf/mutter | \
+		dconf load /org/gnome/mutter/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
