@@ -9,8 +9,8 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat
 
-.PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty bin share \
-	bat gpg debian fedora rhel nixos
+.PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty ghostty bin \
+	share bat gpg debian fedora rhel nixos
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -58,6 +58,10 @@ gdb:
 alacritty:
 	mkdir -p ~/.config/alacritty/
 	cp alacritty/* ~/.config/alacritty/
+
+ghostty:
+	mkdir -p ~/.config/ghostty/
+	cp ghostty/* ~/.config/ghostty/
 
 bin: share
 	mkdir -p ~/.local/bin/
