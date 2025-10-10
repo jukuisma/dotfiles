@@ -20,7 +20,6 @@ set notimeout ttimeout ttimeoutlen=10
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set number relativenumber
 set ff=unix
 set noshowmode
 set noruler
