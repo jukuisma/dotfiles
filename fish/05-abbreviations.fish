@@ -45,5 +45,6 @@ if status is-interactive
     abbr --add s sudo systemctl
     abbr --add od objdump -M intel -D
     abbr --add ct ctags -R \*
+    abbr --add sshp ssh -o PreferredAuthentications=password
 
 end
