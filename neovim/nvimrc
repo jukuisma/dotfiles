@@ -39,6 +39,12 @@ autocmd FileType nix setlocal shiftwidth=2 tabstop=2
 " Set leader to space
 let mapleader = "\<Space>"
 
+" Clear cmdline upon exit
+augroup cmdline
+    autocmd!
+    autocmd CmdlineLeave : echo ''
+augroup end
+
 " Map yanking, pasting and deleting to system clipboard
 map <leader>y "+y
 map <leader>Y "+Y
