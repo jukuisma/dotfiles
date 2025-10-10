@@ -5,29 +5,27 @@ filetype plugin indent on
 set nomodeline
 set hidden
 set wildmenu
-set showcmd
 set hlsearch
 set ignorecase
 set smartcase
 set backspace=indent,eol,start
 set autoindent
 set nostartofline
-set ruler
-set laststatus=2
 set confirm
 set visualbell
 set t_vb=
 set mouse=a
 set cmdheight=1
-set number
 set notimeout ttimeout ttimeoutlen=10
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set cc=80
 set number relativenumber
-set nu rnu
 set ff=unix
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
 
 " Set C specific options
 autocmd FileType c setlocal shiftwidth=4 tabstop=4 noexpandtab

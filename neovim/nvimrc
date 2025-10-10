@@ -21,14 +21,12 @@ set visualbell
 set t_vb=
 set mouse=a
 set cmdheight=1
-set number
 set notimeout ttimeout ttimeoutlen=10
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set cc=80
 set number relativenumber
-set nu rnu
+set cc=80
 set ff=unix
 
 " Set C specific options
