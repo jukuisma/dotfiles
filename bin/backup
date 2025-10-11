@@ -13,7 +13,7 @@ cp -r ~/.gnupg/ /tmp/backup/gnupg
 cp -r ~/.local/share/keepassxc/ /tmp/backup/keepassxc
 
 pushd /tmp/backup
-    tar -czf "backup-$(date +"%Y%m%d-%H%M%S").tar.gz" ssh/ gnupg/ keepassxc/
+    tar -czf "backup-$(hostname)-$(date +"%Y%m%d-%H%M%S").tar.gz" ssh/ gnupg/ keepassxc/
     gpg --sign --encrypt --recipient kuisma.juho+github@gmail.com backup-*.gz
     scp ./*.asc solanum:/mnt/solanum/enc/backup/
 popd
