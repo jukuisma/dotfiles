@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if ! grep solanum /etc/hosts > /dev/null; then
+    exit 1
+fi
+
+sshfs -o idmap=user solanum:/mnt/solanum/enc ~/solanum
