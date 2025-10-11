@@ -46,5 +46,6 @@ if status is-interactive
     abbr --add od objdump -M intel -D
     abbr --add ct ctags -R \*
     abbr --add sshp ssh -o PreferredAuthentications=password
+    abbr --add logout loginctl kill-user (whoami)
 
 end
