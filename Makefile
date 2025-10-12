@@ -10,7 +10,7 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty ghostty bin \
-	share bat gpg debian fedora rhel nixos
+	share bat gpg background debian fedora rhel nixos
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -81,6 +81,11 @@ bat:
 
 gpg:
 	cp gpg/gpg.conf ~/.gnupg/gpg.conf
+
+background:
+	curl \
+		-o ~/Pictures/background.png \
+		https://raw.githubusercontent.com/GixoXYZ/LunarLobsterWallpapers/d5ce768b547231e68a5a40790e749701d217a834/Wallpapers/lunar-lobster-16-bit.png
 
 debian:
 	sudo apt-get -y install ${SW_DEBIAN}
