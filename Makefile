@@ -10,7 +10,7 @@ SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat
 
 .PHONY: vim neovim fish chsh git tmux dconf radare2 gdb alacritty ghostty bin \
-	share bat gpg background debian fedora rhel nixos
+	share bat gpg hypr background debian fedora rhel nixos
 
 vim:
 	cp vim/vimrc ~/.vimrc
@@ -83,6 +83,10 @@ bat:
 
 gpg:
 	cp gpg/gpg.conf ~/.gnupg/gpg.conf
+
+hypr:
+	mkdir -p ~/.config/hypr/
+	cp hypr/* ~/.config/hypr/
 
 background:
 	curl \
