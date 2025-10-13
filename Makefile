@@ -47,6 +47,8 @@ dconf:
 		dconf load /org/gnome/shell/app/switcher/
 	cat dconf/mutter | \
 		dconf load /org/gnome/mutter/
+	cat dconf/workspaces | \
+		dconf load /org/gnome/desktop/wm/preferences/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
