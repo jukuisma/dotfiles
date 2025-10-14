@@ -87,6 +87,7 @@ gpg:
 hypr:
 	mkdir -p ~/.config/hypr/
 	cp hypr/* ~/.config/hypr/
+	sed -i 's/vagrant/${USER}/g' ~/.config/hypr/hyprlock.conf
 
 background:
 	curl \
