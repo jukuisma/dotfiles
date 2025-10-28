@@ -27,9 +27,6 @@
 [rebase]
     autosquash = true
 
-[gpg "ssh"]
-    allowedSignersFile = ~/.ssh/allowed_signers
-
 [pager]
     branch = false
     diff = "diff-so-fancy | less"
