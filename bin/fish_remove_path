@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+set -l selection (
+    echo $fish_user_paths | \
+        tr " " "\n" | nl | awk '{$1=$1};1' | fzf
+)
+if test $status -eq 0
+    set -l index (echo $selection | cut -d " " -f 1)
+    set --erase --universal fish_user_paths[$index]
+end

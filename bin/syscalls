@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-grep -E '^[0-9]' ~/kernel/linux-*/arch/x86/entry/syscalls/syscall_64.tbl |\
-    fzf |\
-    cut -d $'\t' -f 1 |\
+grep -E '^[0-9]' ~/kernel/linux-*/arch/x86/entry/syscalls/syscall_64.tbl | \
+    fzf | \
+    cut -d $'\t' -f 1 | \
     wl-copy -n
