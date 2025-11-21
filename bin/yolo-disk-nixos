@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -xe
+
+if [ "$(id -u)" -ne 0 ]; then
+    exit 1
+fi
+
+if ! grep -- nixos /etc/os-release; then
+    exit 1
+fi
+
+if ! grep -- vagrant /etc/passwd; then
+    exit 1
+fi
+
+fdisk /dev/vda <<EOF
+d
+2
+n
+2
+
+
+w
+EOF
+
+resize2fs /dev/vda2
+reboot
