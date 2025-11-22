@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 2 ]; then
     echo "Must be 2 parameters: e.g. 'replace replace_this with_this'"
-    return 1
+    exit 1
 fi
 
 limit=50  # if more than 50 grep results found, do nothing

@@ -4,13 +4,13 @@ pattern="$1"
 if [ -z "$pattern" ]; then
     echo "Usage:"
     echo "git-far 's/foo/bar/g'"
-    return
+    exit 1
 fi
 
 # Check if git working tree is clean
 if [ ! -z "$(git status --porcelain)" ]; then
     echo "Working directory unclean!"
-    return
+    exit 1
 fi
 
 sed --follow-symlinks -i "$pattern" $(git ls-files)
@@ -19,11 +19,11 @@ sed --follow-symlinks -i "$pattern" $(git ls-files)
 git stash --include-untracked
 git stash show -p
 
-read -q "REPLY?Apply changes? [y/n] " -n 1 -r
+read -p "Apply changes? [y/n] " -n 1 -r
 echo
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     git stash pop
-    return
+    exit 0
 fi
 
 git stash drop
