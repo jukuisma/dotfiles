@@ -64,7 +64,9 @@ map <leader><leader> :Files<CR>
 map <leader>ff :Files<CR>
 map <leader>fb :Buffers<CR>
 map <leader>fh :History<CR>
-map <leader>fg :Rg<Space>
+map <leader>fg :Rg<CR>
+let g:fzf_vim = {}
+let g:fzf_vim.rg_options = '--nth 4..'
 
 " Formatting
 nmap <leader>fj :%!jq<CR>
