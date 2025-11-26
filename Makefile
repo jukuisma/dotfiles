@@ -2,10 +2,11 @@ PWD = $(shell pwd)
 USER = $(shell whoami)
 
 SW_COMMON = vim neovim htop strace tree make gcc gdb \
-	    fzf fd-find ripgrep fish wget curl bat
-SW_DEBIAN = ${SW_COMMON} xxd universal-ctags
-SW_FEDORA = ${SW_COMMON} xxd ctags diff-so-fancy
-SW_RHEL = ${SW_COMMON} util-linux-user ctags diff-so-fancy
+	    fzf ripgrep fish wget curl bat
+SW_DEBIAN = ${SW_COMMON} fd-find xxd universal-ctags
+SW_FEDORA = ${SW_COMMON} fd-find xxd ctags diff-so-fancy
+SW_RHEL = ${SW_COMMON} fd-find util-linux-user ctags diff-so-fancy
+SW_SLES = ${SW_COMMON} fd ctags diff-so-fancy
 
 all: vim neovim fish chsh git tmux radare2 gdb alacritty bin bat
 
@@ -106,6 +107,10 @@ fedora:
 rhel:
 	sudo dnf -y install epel-release
 	sudo dnf -y install ${SW_RHEL}
+
+sles:
+	sudo SUSEConnect -p PackageHub/16.0/x86_64
+	sudo zypper install -y ${SW_SLES}
 
 nixos: all
 	sudo nixos-rebuild switch --upgrade
