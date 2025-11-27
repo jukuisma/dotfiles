@@ -111,8 +111,8 @@ nmap <leader>di O__asm__ volatile ("int3");<Esc>j
 nmap <leader>dI o__asm__ volatile ("int3");<Esc>k
 nmap <leader>db O__asm__ volatile ("brk 0");<Esc>j
 nmap <leader>dB o__asm__ volatile ("brk 0");<Esc>k
-nmap <leader>dp Oimport pdb; pdb.set_trace()<Esc>j
-nmap <leader>dP oimport pdb; pdb.set_trace()<Esc>k
+nmap <leader>dp Obreakpoint()<Esc>j
+nmap <leader>dP obreakpoint()<Esc>k
 
 " Convert strace execve line into the corresponding command in place
 let @s = 'ds"f,x'
