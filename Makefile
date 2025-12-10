@@ -50,6 +50,8 @@ dconf:
 		dconf load /org/gnome/mutter/
 	cat dconf/workspaces | \
 		dconf load /org/gnome/desktop/wm/preferences/
+	cat dconf/input-sources | \
+		dconf load /org/gnome/desktop/input-sources/
 
 radare2:
 	cp radare2/radare2rc ~/.radare2rc
