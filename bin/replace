@@ -8,10 +8,10 @@ fi
 limit=50  # if more than 50 grep results found, do nothing
 search="$1"
 replace="$2"
-length=$(grep -rlI --color=never "$search" | wc -l)
+length=$(git grep -rlI --color=never "$search" | wc -l)
 
 if [ "$length" -ne 0 ] && [ "$length" -lt $limit ]; then
-    for file in $(grep -rlI --color=never "$search")
+    for file in $(git grep -rlI --color=never "$search")
     do
         nvim -c "%s/$search/$replace/gc" -c 'wq' "$file"
     done
