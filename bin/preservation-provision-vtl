@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! grep AlmaLinux /etc/os-release > /dev/null; then
+    exit 1
+fi
+
+pushd ~/scratch/ansible-preservation-system/
+    ansible-playbook -i inventory/localhost/ --tags vtl testing-site.yml
+popd

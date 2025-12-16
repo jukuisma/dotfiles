@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! grep AlmaLinux /etc/os-release > /dev/null; then
+    exit 1
+fi
+
+pushd ~/scratch/preservation/
+    make e2e-localhost-cleanup
+popd

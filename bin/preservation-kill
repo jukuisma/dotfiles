@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if ! grep AlmaLinux /etc/os-release > /dev/null; then
+    exit 1
+fi
+
+for service in nginx httpd solr redis; do
+    sudo systemctl stop $service
+    sudo systemctl disable $service
+done
+
+sudo systemctl stop 'preservation-*'
+sudo rm /etc/systemd/system/preservation-*
+
+sudo killall java
+sudo killall rq-3
