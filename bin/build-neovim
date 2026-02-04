@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! grep Debian /etc/os-release; then
+    exit 1
+fi
+
+# Build and install neovim
+sudo apt -y install make cmake gcc gettext
+mkdir -p ~/github
+rm -rf ~/github/neovim
+git clone https://github.com/neovim/neovim ~/github/neovim
+
+pushd ~/github/neovim
+    make CMAKE_BUILD_TYPE=RelWithDebInfo
+    pushd build
+        cpack -G DEB
+        sudo dpkg -i nvim-linux-x86_64.deb
+    popd
+popd
