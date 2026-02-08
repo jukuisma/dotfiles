@@ -3,7 +3,8 @@ USER = $(shell whoami)
 
 SW_COMMON = vim neovim htop strace tree make gcc gdb \
 	    fzf ripgrep fish wget curl bat
-SW_DEBIAN = ${SW_COMMON} fd-find xxd universal-ctags
+SW_DEBIAN = ${SW_COMMON} fd-find xxd universal-ctags \
+	    bc libssl-dev libelf-dev libncurses-dev flex bison
 SW_FEDORA = ${SW_COMMON} fd-find xxd ctags diff-so-fancy
 SW_RHEL = ${SW_COMMON} fd-find util-linux-user ctags diff-so-fancy
 SW_SLES = ${SW_COMMON} fd ctags diff-so-fancy
