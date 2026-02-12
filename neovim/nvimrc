@@ -120,6 +120,12 @@ nmap <leader>cc 0f(yi[Vp100@s
 
 " Other snippets
 nmap <leader>` o```<CR>```<Esc>O
+nmap <leader>[ a[<CR>]<Esc>O
+nmap <leader>{ a{<CR>}<Esc>O
+nmap <leader>( a(<CR>)<Esc>O
+nmap <leader>] o[<CR>]<Esc>O
+nmap <leader>} o{<CR>}<Esc>O
+nmap <leader>) o{<CR>}<Esc>O
 
 " Faster navigation
 map J }
