@@ -1,2 +1,4 @@
 [/]
+mru-sources=[('xkb', 'fi'), ('xkb', 'us'), ('ibus', 'anthy')]
+sources=[('xkb', 'fi'), ('ibus', 'anthy'), ('xkb', 'us')]
 xkb-options=['caps:escape']
