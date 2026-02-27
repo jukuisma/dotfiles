@@ -2,9 +2,7 @@
 
 set -e
 
-if ! grep Debian /etc/os-release; then
-    exit 1
-fi
+grep Debian /etc/os-release || exit 1
 
 # Build and install neovim
 sudo apt -y install make cmake gcc gettext

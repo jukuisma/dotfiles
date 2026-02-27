@@ -2,9 +2,7 @@
 
 # $ sudo dnf install gitlab-ci-pipeline rpmdevtools
 
-if ! grep AlmaLinux /etc/os-release; then
-    exit 1
-fi
+grep AlmaLinux /etc/os-release || exit 1
 
 specpath="include/rhel9"
 rm -rf rpmbuild/

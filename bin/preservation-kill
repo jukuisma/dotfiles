@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-if ! grep AlmaLinux /etc/os-release > /dev/null; then
-    exit 1
-fi
+grep AlmaLinux /etc/os-release > /dev/null || exit 1
 
 for service in nginx httpd solr redis; do
     sudo systemctl stop $service

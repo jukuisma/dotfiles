@@ -2,17 +2,9 @@
 
 set -xe
 
-if [ "$(id -u)" -ne 0 ]; then
-    exit 1
-fi
-
-if ! grep -- nixos /etc/os-release; then
-    exit 1
-fi
-
-if ! grep -- vagrant /etc/passwd; then
-    exit 1
-fi
+test "$(id -u)" -eq 0 || exit 1
+grep -- nixos /etc/os-release || exit 1
+grep -- vagrant /etc/passwd || exit 1
 
 fdisk /dev/vda <<EOF
 d

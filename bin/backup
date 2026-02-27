@@ -2,9 +2,7 @@
 
 set -e
 
-if ! grep solanum /etc/hosts > /dev/null; then
-    exit 1
-fi
+grep solanum /etc/hosts > /dev/null || exit 1
 
 mkdir -p /tmp/backup/
 
