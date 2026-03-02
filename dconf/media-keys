@@ -12,7 +12,7 @@ command='firefox'
 name='Internet'
 
 [custom-keybindings/custom2]
-binding='<Alt>e'
+binding='<Alt>u'
 command='thunderbird'
 name='Email'
 
