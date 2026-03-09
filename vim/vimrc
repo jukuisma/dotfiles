@@ -66,7 +66,7 @@ nmap <leader>s :%s/
 vmap <leader>s :s/
 
 " ctags
-map <leader>td <C-]>
+map <leader>td <C-]>zz
 map <leader>th <C-w><C-]>
 map <leader>tl g]
 map <leader>tj <C-t>

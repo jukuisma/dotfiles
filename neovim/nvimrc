@@ -76,7 +76,7 @@ vmap <leader>fj !jq<CR>
 vmap <leader>fx !xmllint --format -<CR>
 
 " ctags
-map <leader>td <C-]>
+map <leader>td <C-]>zz
 map <leader>tl g]
 map <leader>th <C-w><C-]>
 map <leader>tj <C-t>
