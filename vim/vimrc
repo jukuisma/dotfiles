@@ -13,7 +13,6 @@ set autoindent
 set nostartofline
 set confirm
 set visualbell
-set t_vb=
 set mouse=a
 set cmdheight=1
 set notimeout ttimeout ttimeoutlen=10
