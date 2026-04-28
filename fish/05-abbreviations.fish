@@ -32,7 +32,7 @@ if status is-interactive
     abbr --add v! $BIN/vim
     abbr --add vimb nvim -b
     abbr --add vimd nvim -d
-    abbr --add vimt nvim -t
+    abbr --add vimt nvim "'+norm zz'" -t
 
     # Misc
     abbr --add activate source venv/bin/activate.fish
