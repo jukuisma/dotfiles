@@ -2,7 +2,7 @@
 
 set -e
 
-grep AlmaLinux /etc/os-release > /dev/null || exit1
+grep AlmaLinux /etc/os-release > /dev/null || exit 1
 
 pushd ~/scratch/ansible-preservation-system/
     ansible-playbook -i inventory/localhost/ --tags vtl testing-site.yml
