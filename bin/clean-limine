@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -xe
+
+test "$(id -u)" -eq 0 || exit 1
+grep -- nixos /etc/os-release || exit 1
+grep -E -- 'limine.*enable.*true' /etc/nixos/configuration.nix || exit 1
+
+current_kernel="$(uname -r)"
+for i in $(find /boot/limine/kernels -type f | grep -v "$current_kernel"); do
+    rm -f "$i"
+done
+
+nix-collect-garbage --delete-older-than 7d
+nixos-rebuild switch --upgrade
